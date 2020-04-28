@@ -7,6 +7,6 @@ class HelpCenter{
         this.lat=lat;
         this.lon=lon;
         this.address=address;
-
+        
     }
 }

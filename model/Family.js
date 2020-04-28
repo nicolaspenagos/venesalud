@@ -12,7 +12,4 @@ class Family{
     removeRelative(id){
         this.relatives.pop(1,id); 
     }
-    getRelatives(){
-        return this.relatives; 
-    }
 }
