@@ -6,4 +6,17 @@ class User{
         this.age=age; 
         this.sex=sex;
     }
+
+    getId(){
+        return this.id; 
+    }
+    getNickname(){
+        return this.nickname; 
+    }
+    getAge(){
+        return this.age; 
+    }
+    getSex(){
+        return this.sex; 
+    }
 }
