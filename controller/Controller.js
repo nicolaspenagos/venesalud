@@ -6,6 +6,9 @@ class Controller{
     test(){
         this.logic.test(); 
     }
+    logIn(){
+        this.logic.logIn();
+    }
 
 
 }
