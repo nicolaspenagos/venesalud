@@ -16,12 +16,12 @@
     <h1>Login Here</h1>
     <div class="input-box">
         <i class="fa fa-user"></i>
-        <input type="user" placeholder="Usuario">
+        <input type="email" placeholder="Usuario" class="inputUser">
     </div>
     <div class="input-box">
         <i class="fa fa-key"></i>
-        <input type="password" placeholder="Contraseña" id="myInput">
-        <span class="eye" onclick="myFunction()">
+        <input type="password" placeholder="Contraseña" class="inputPassword">
+        <span class="eye">
             <i id="hide1" class="fa fa-eye"></i>
             <i id="hide2" class="fa fa-eye-slash"></i>
         </span>
@@ -30,36 +30,28 @@
 </div>
 
 
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
   <script src="./model/AttentionPath.js"></script>  
   <script src="./model/HelpCenter.js"></script>  
   <script src="./model/User.js"></script>  
+  <script src="./model/LoginFrontEnd.js"></script>
   <script src="./model/Disease.js"></script>  
   <script src="./model/Family.js"></script>
-  <script src="./model/LoginFrontEnd.js"></script>
   <script src="./model/Logic.js"></script>
-
   <script src="./controller/Controller.js"></script>
-
-  <script src="./view/Main.js"></script>
   
-  <script>
-      function myFunction(){
-          var x = document.getElementById("myInput");
-          var y = document.getElementById("hide1");
-          var z = document.getElementById("hide2");
-
-          if(x.type === 'password'){
-              x.type = "text";
-              y.style.display = "block";
-              z.style.display = "none";
-          }
-          else{
-              x.type = "password";
-              y.style.display = "none";
-              z.style.display = "block";
-          }
-      }
-  </script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  
+  
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="./view/Main.js"></script>
+    
+<script>
+  
+  
+</script>
   
 
 </body>

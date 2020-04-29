@@ -12,8 +12,7 @@ class Logic{
     }
 
     logIn(){
-        this.login = new LoginFrontEnd();
-        this.login.myFunction();
+        
     }
 
     test(){
