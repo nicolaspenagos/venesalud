@@ -9,7 +9,7 @@ class Logic{
         this.attentionpaths = [];
         this.helpCenters = [];
         this.usersMap = new Map();
-        this.idCounter = 1;
+        this.idCounter = 1000;
 
     }
 
@@ -55,8 +55,8 @@ class Logic{
     addUser( nickname, age, sex){
 
         if(this.validateUser( nickname, age, sex)){
-            this.users.push(new User(this.id, nickname, age, sex));
-            this.usersMap.set(nickname, this.id);
+            this.users.push(new User(this.idCounter, nickname, age, sex));
+            this.usersMap.set(nickname, this.idCounter);
             this.idCounter++;
             console.log(this.users[0].nickname+" "+this.users[0].age );
  
@@ -68,13 +68,14 @@ class Logic{
     searcUser(nickname){
 
         var currentUser;
+        var id = this.usersMap.get(nickname);
         var stop = false;
 
         for (let i = 0; i < this.users.length && !stop; i++) {
 
-            currentUser = users[i];
+            currentUser = this.users[i];
 
-            if(id === currentUser.id){
+            if(id == currentUser.id){
                 stop = true;
             }
         
@@ -91,8 +92,10 @@ class Logic{
         console.log(this.family.familyName)
 
         this.addUser("nick",14, "male");
-        this.addUser("nick",14, "male");
-        console.log(this.users.length);
+        this.addUser("jaime",14, "male");
+        this.addUser("nicolas",14, "male");
+        this.addUser("daniel",14, "male");
+        console.log(this.searcUser("nicolas").id);
     }
 
 
