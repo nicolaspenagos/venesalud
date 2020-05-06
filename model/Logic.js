@@ -17,6 +17,13 @@ class Logic{
         
     }
 
+    /* @author Nicolas Penagos
+    *  Validates if a user is able to be added or not
+    *  @param nickname is the unique name for each user
+    *  @param age is the age of the user 
+    *  @param sex is the sex given by the user 
+    *  @return add returns true is the user is able to be added or false if not
+    */
     validateUser( nickname, age, sex){
 
         var add = true;
@@ -31,7 +38,7 @@ class Logic{
             add = false;
         }
 
-        if(nickname == " "){
+        if(nickname == " "&& nickname.length>5 && nickname.length<16){
             add = false;
         }
 
@@ -39,6 +46,12 @@ class Logic{
 
     }
 
+    /* @author Nicolas Penagos
+    *  Add an user to the array of users 
+    *  @param nickname is the unique name for each user
+    *  @param age is the age of the user 
+    *  @param sex is the sex given by the user 
+    */
     addUser( nickname, age, sex){
 
         if(this.validateUser( nickname, age, sex)){
