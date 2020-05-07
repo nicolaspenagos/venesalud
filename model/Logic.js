@@ -138,7 +138,7 @@ class Logic{
 
             var currentUser = this.users[i];
 
-            if(nickname === currentUser.nickname){
+            if(id === currentUser.id){
                 stop = true;
                 foundUser=currentUser;
             }
