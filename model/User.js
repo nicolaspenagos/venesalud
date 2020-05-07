@@ -5,5 +5,7 @@ class User{
         this.nickname=nickname;
         this.age=age; 
         this.sex=sex;
+        this.latitude;
+        this.longitude;
     }
 }
