@@ -10,6 +10,7 @@ class Logic{
         this.helpCenters = [];
         this.usersMap = new Map();
         this.familiesMap = new Map();
+        this.helpCenterMap = new Map(); 
         this.idCounter = 1000;
         this.idFamily = 1;
 
@@ -122,6 +123,14 @@ class Logic{
         }
 
     }
+      /* @author Daniel Martinez
+    *  Create and add a HelpCenter
+    *  @param HCname
+    */
+   addHelpCenter( HCname, def, address){
+        this.helpCenters.push(new HelpCenter( HCname, def, 0,0,address));
+        console.log(this.helpCenters[0].name+" "+this.helpCenters[0].definition );
+    }
 
     /* @author Nicolas Penagos
     *  Search for a specific user in a user array given a nickname
@@ -149,6 +158,26 @@ class Logic{
         return foundUser;
     }
 
+        /* @author Daniel Martinez
+    *  Search for a specific help Center in a helpCenter array given a name
+    *  @param name it is the parameter given for the helpCenter to be searched
+    *  @return currentHC returns the helpCenter object if it is in the array, otherwise it returns null
+    */
+    searchHelpCenter(name){
+     
+        var foundHC;
+        var stop = false;
+        var i = 0;
+        while(i<this.helpCenters.length&&!stop){
+            var currentHC = this.helpCenters[i];
+            if(name == currentHC.name){
+                stop = true;
+                foundHC = currentHC;
+            }
+            i++;
+        }
+        return foundHC;
+    }
     test(){
        // this.family = new Family("firstFamily"); 
      //   this.family.addRelative(1, "nick",14, "male"); 
@@ -161,24 +190,27 @@ class Logic{
         this.addUser("daniel",14, "male");
 
        
-        console.log(this.searchUser("nicolas").id);
+        //console.log(this.searchUser("nicolas").id);
 
-        console.log("*********************************");
+        //console.log("*********************************");
 
         this.addFamily("Penagos");
         this.addFamily("Suarez");
         this.addFamily("Martinez");
        // console.log("searchFamily(Suarez): "+this.searchFamily("Suarez").familyName+" "+this.searchFamily("Suarez").id);
-        console.log(this.searchUser("nicolas").nickname+" xxxxx "+ this.searchFamily("Penagos").familyName);
+        //console.log(this.searchUser("nicolas").nickname+" xxxxx "+ this.searchFamily("Penagos").familyName);
         this.addRelative("nicolas", "Penagos");
         this.addRelative("nick","Penagos");
-
         
+       // this.helpCenters.push(new HelpCenter("nuevo", "nose", 300, 700, "calle#3")); 
+        //this.helpCenters.push(new HelpCenter("otro", "nose", 300, 700, "calle#3")); 
         
+        this.addHelpCenter( "eoooooo", "idkBro", "3####"); 
+        console.log(this.searchHelpCenter("eoooooo").name); 
 
-        console.log("*********************************");
-        console.log(this.searchFamily("Penagos").relatives[0].nickname);
-        console.log(this.searchFamily("Penagos").relatives[1].nickname);
+        //console.log("*********************************");
+        //console.log(this.searchFamily("Penagos").relatives[0].nickname);
+        //console.log(this.searchFamily("Penagos").relatives[1].nickname);
 
 
     }
