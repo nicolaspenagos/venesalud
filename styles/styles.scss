@@ -1,0 +1,75 @@
+body,
+html {
+    height: 100%;
+    width: 100%;
+}
+
+.landingR {
+    background-color: rgb(219, 228, 245);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__logo {
+        background-color: royalblue;
+        height: 300px;
+        width: 600px;
+        margin: 40px auto;
+    }
+
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 24pt;
+    }
+
+    &__input {
+        margin: 1.5em auto;
+        width: 600px;
+        height: 80px;
+
+        border-radius: 50px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+
+        border: 0;
+        outline: 0;
+
+        padding: 22px 18px;
+
+
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
+    }
+
+    &__register {
+
+        margin: 1.5em auto;
+
+        border: 0;
+        outline: 0;
+
+        width: 600px;
+        height: 120px;
+
+        border-radius: 50px;
+        background-color: royalblue;
+        padding: 22px 18px;
+
+
+        color: seashell;
+
+
+
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
+    }
+
+
+}
+
+@media (min-width: 600px) {
+    // Aqui va lo responsive para las pantallas de escritorio
+}

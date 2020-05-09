@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Aplicacion web para la plataforma venesalud"/>
-  <meta name="keywords" content="salud, prevencion, venezolanos, cali, rutas de atencion, educacion"/>
+  <meta name="description" content="Aplicacion web para la plataforma venesalud" />
+  <meta name="keywords" content="salud, prevencion, venezolanos, cali, rutas de atencion, educacion" />
   <title>Venesalud</title>
-  <link rel="./stylesheet" href="mystylesheet.css"/>
+  <!-- // Antiguo .css
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    -->
 
+  <!-- Web Normalize .css -->
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+
+  <!-- Link al .css de sass -->
+  <link rel="stylesheet" href="./styles/styles.css">
 </head>
+
 <body>
 
+  <!-- // Landing page antiguo
   <div class="form-box">
     <h1>Login Here</h1>
     <div class="input-box">
@@ -28,31 +37,45 @@
     </div>
     <button type="button" class="login-btn">LOGIN</button>
 </div>
+-->
 
+  <main class="landingR">
+    <div class="landingR__logo"></div>
+
+    <section class="landingR__form">
+      <input type="text" placeholder="Nombre de usuario" class="landingR__input landingR__input--user">
+      <input type="email" placeholder="Correo electronico" class="landingR__input landingR__input--mail">
+      <input type="password" placeholder="Contraseña" class="landingR__input landingR__input--password">
+
+      <button type="button" class="landingR__register">Regístrate</button>
+
+    </section>
+  </main>
 
   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-  <script src="./model/AttentionPath.js"></script>  
-  <script src="./model/HelpCenter.js"></script>  
-  <script src="./model/User.js"></script>  
+  <script src="./model/AttentionPath.js"></script>
+  <script src="./model/HelpCenter.js"></script>
+  <script src="./model/User.js"></script>
   <script src="./model/LoginFrontEnd.js"></script>
-  <script src="./model/Disease.js"></script>  
+  <script src="./model/Disease.js"></script>
   <script src="./model/Family.js"></script>
   <script src="./model/Logic.js"></script>
   <script src="./controller/Controller.js"></script>
-  
+
   <!-- The core Firebase JS SDK is always required and must be listed first -->
-  
-  
+
+
   <!-- TODO: Add SDKs for Firebase products that you want to use
     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
-    <script src="./view/Main.js"></script>
-    
-<script>
-  
-  
-</script>
-  
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="./view/Main.js"></script>
+
+  <script>
+
+
+  </script>
+
 
 </body>
+
 </html>

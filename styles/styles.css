@@ -1,0 +1,73 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.landingR {
+  background-color: #dbe4f5;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.landingR__logo {
+  background-color: royalblue;
+  height: 300px;
+  width: 600px;
+  margin: 40px auto;
+}
+
+.landingR__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 24pt;
+}
+
+.landingR__input {
+  margin: 1.5em auto;
+  width: 600px;
+  height: 80px;
+  border-radius: 50px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border: 0;
+  outline: 0;
+  padding: 22px 18px;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.landingR__register {
+  margin: 1.5em auto;
+  border: 0;
+  outline: 0;
+  width: 600px;
+  height: 120px;
+  border-radius: 50px;
+  background-color: royalblue;
+  padding: 22px 18px;
+  color: seashell;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+}
+/*# sourceMappingURL=styles.css.map */
