@@ -57,6 +57,7 @@ html {
           box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
+/*
 .landingR__register {
   margin: 1.5em auto;
   border: 0;
@@ -70,4 +71,21 @@ html {
   -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 }
+*/
+
+/* para que funcione el button*/
+
+a{
+  margin: 1.0em auto;
+  font-size: 50px;
+  color:#000;
+  text-decoration:none;
+  display:inline-block;
+  border-radius: 50px;
+  background-color: royalblue;
+  color:#fff;
+  padding:100px 210px; 
+}
+
+
 /*# sourceMappingURL=styles.css.map */

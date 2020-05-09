@@ -1,0 +1,57 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.pantallaInicial {
+  background-color: #dbe4f5;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pantallaInicialImagenes {
+  background-color: royalblue;
+  height: 300px;
+  width: 600px;
+  margin: 40px auto;
+}
+.pantallasClick {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 24pt;
+  }
+  a{
+    margin: 1.0em auto;
+    font-size: 50px;
+    color:#000;
+    text-decoration:none;
+    display:inline-block;
+    border-radius: 50px;
+    background-color: royalblue;
+    color:#fff;
+    padding:100px 210px; 
+  }
+
+
+/*# sourceMappingURL=styles.css.map */
