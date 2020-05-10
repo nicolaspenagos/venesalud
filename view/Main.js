@@ -25,7 +25,7 @@ var registerUser = function (event) {
     // ...
   });
 }
-loginBtn.addEventListener('click', registerUser);
+//loginBtn.addEventListener('click', registerUser);
 
 let control = new Controller();
 control.test();

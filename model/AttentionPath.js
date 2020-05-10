@@ -1,7 +1,8 @@
 class AttentionPath{
 
-    constructor(){
-        
+    constructor(helpCenter,diseases){
+        this.helpCenter=helpCenter;
+        this.diseases=diseases;
     }
 
 }

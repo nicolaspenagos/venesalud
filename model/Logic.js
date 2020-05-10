@@ -178,6 +178,42 @@ class Logic{
         }
         return foundHC;
     }
+
+    /* @author Daniel Rojas
+    *  Add a attention path to the array of attentionpaths 
+    *  @param helpCenter where the user should go
+    *  @param diseases are the diseases that the help center manages
+    */
+    addAttentionpath(helpCenter,diseases){
+        this.attentionpaths.push(new AttentionPath(helpCenter,diseases));
+    }
+
+    /* @author Daniel Rojas
+    *  Search the attention paths for a specific disease.
+    *  @param disease it is the parameter given for the user to be searched
+    *  @return foundAP returns an array of attetion Path that handle the disease, otherwise it returns null
+    */
+    searchAttentionPath(disease){
+        var foundAP=[];
+        var length= 0;
+
+        while(length<this.attentionpaths.length){
+            var currentAP = this.attentionpaths[length];
+            for(let i=0;i<currentAP.diseases.length; i++ ){
+                if(disease == currentAP.diseases[i]){
+                    foundAP.push(currentAP);
+                }
+            }
+            length++;
+        }
+
+        if(foundAP.length==0){
+            foundAP=null;
+        }
+
+        return foundAP;
+    }
+
     test(){
        // this.family = new Family("firstFamily"); 
      //   this.family.addRelative(1, "nick",14, "male"); 
@@ -212,6 +248,18 @@ class Logic{
         //console.log(this.searchFamily("Penagos").relatives[0].nickname);
         //console.log(this.searchFamily("Penagos").relatives[1].nickname);
 
+        console.log("*********************************");
+
+        var testDiseases1=["salmonella","malaria"];
+        var testDiseases2=["sifilis Congenita","sifilis gestional"];
+        var testDiseases3=["acciones de acogida","Prevención de la Xenofobia"];
+
+        this.addAttentionpath("hospital 1",testDiseases1);
+        this.addAttentionpath("ancur",testDiseases3);
+        this.addAttentionpath("hospital 2", testDiseases2);
+        this.addAttentionpath("hospital 3", testDiseases1);
+
+        console.log(this.searchAttentionPath("salmonella"));
 
     }
 
