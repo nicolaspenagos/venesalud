@@ -4,7 +4,71 @@ html {
   width: 100%;
 }
 
-.landingR {
+.landingRegister {
+  background-color: #dbe4f5;
+  display: none;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.landingRegister__logo {
+  height: 350px;
+  width: 600px;
+  margin: 40px auto;
+}
+
+.landingRegister__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 24pt;
+}
+
+.landingRegister__input {
+  margin: 1.5em auto;
+  width: 600px;
+  height: 80px;
+  border-radius: 50px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border: 0;
+  outline: 0;
+  padding: 22px 18px;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.landingRegister__register {
+  margin: 1.5em auto;
+  border: 0;
+  outline: 0;
+  width: 600px;
+  height: 120px;
+  border-radius: 50px;
+  background-color: royalblue;
+  padding: 22px 18px;
+  color: seashell;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.landingLogIn {
   background-color: #dbe4f5;
   height: 100%;
   display: -webkit-box;
@@ -22,14 +86,19 @@ html {
           justify-content: center;
 }
 
-.landingR__logo {
-  background-color: royalblue;
-  height: 300px;
+.landingLogIn__Logo {
+  height: 350px;
   width: 600px;
   margin: 40px auto;
 }
 
-.landingR__form {
+.landingLogIn__LogoImg {
+  height: 350px;
+  width: 600px;
+  margin: 40px auto;
+}
+
+.landingLogIn__form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,7 +112,7 @@ html {
   font-size: 24pt;
 }
 
-.landingR__input {
+.landingLogIn__input {
   margin: 1.5em auto;
   width: 600px;
   height: 80px;
@@ -57,8 +126,7 @@ html {
           box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
-/*
-.landingR__register {
+.landingLogIn__logIn {
   margin: 1.5em auto;
   border: 0;
   outline: 0;
@@ -71,21 +139,151 @@ html {
   -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 }
-*/
 
-/* para que funcione el button*/
-
-a{
-  margin: 1.0em auto;
-  font-size: 50px;
-  color:#000;
-  text-decoration:none;
-  display:inline-block;
-  border-radius: 50px;
-  background-color: royalblue;
-  color:#fff;
-  padding:100px 210px; 
+.landingLogIn__createAccountBtn {
+  border: none;
+  position: relative;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 30px;
+  cursor: pointer;
+  display: inline-block;
+  color: royalblue;
+  margin-top: auto;
 }
 
+.landingLogIn__createAccount {
+  position: absolute;
+  bottom: 0px;
+  font-size: 32px;
+}
 
+.landingLogIn__passwordForgotten {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 32px;
+  cursor: pointer;
+  display: inline-block;
+  color: royalblue;
+}
+
+.initialScreen {
+  background-color: #dbe4f5;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.initialScreen__logo {
+  height: 300px;
+  width: 600px;
+  margin: 40px auto;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.initialScreen__logoImg {
+  height: 150px;
+  width: 250px;
+  margin: 40px auto;
+}
+
+.initialScreen__clickScreens {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 24pt;
+}
+
+.initialScreen__clickScreens__item {
+  margin: 1.0em auto;
+  font-size: 50px;
+  color: #000;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 50px;
+  background-color: royalblue;
+  color: #fff;
+  padding: 100px 210px;
+}
+
+.initialScreen__clickScreens__item--img {
+  height: 100%;
+  width: 100%;
+}
+
+.navegationBar {
+  background-color: royalblue;
+  width: 100%;
+  display: none;
+  border-radius: 51px;
+  height: 8%;
+  position: absolute;
+  bottom: 0px;
+}
+
+.navegationBar__image {
+  margin: 20px 70px;
+  width: 100px;
+  height: 100px;
+}
+
+.navegationBar__Home--On {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navegationBar__Home--Off {
+  display: none;
+}
+
+.navegationBar__Search--On {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navegationBar__Search--Off {
+  display: none;
+}
+
+.navegationBar__Diseases--On {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navegationBar__Diseases--Off {
+  display: none;
+}
+
+.navegationBar__User--On {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navegationBar__User--Off {
+  display: none;
+}
 /*# sourceMappingURL=styles.css.map */

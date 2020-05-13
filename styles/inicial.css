@@ -4,7 +4,7 @@ html {
   width: 100%;
 }
 
-.pantallaInicial {
+.initialScreen {
   background-color: #dbe4f5;
   height: 100%;
   display: -webkit-box;
@@ -20,15 +20,15 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  &__images {
+    background-color: royalblue;
+    height: 300px;
+    width: 600px;
+    margin: 40px auto;
+    }
 }
 
-.pantallaInicialImagenes {
-  background-color: royalblue;
-  height: 300px;
-  width: 600px;
-  margin: 40px auto;
-}
-.pantallasClick {
+.clickScreens {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -40,17 +40,17 @@ html {
         -ms-flex-align: center;
             align-items: center;
     font-size: 24pt;
-  }
-  a{
-    margin: 1.0em auto;
-    font-size: 50px;
-    color:#000;
-    text-decoration:none;
-    display:inline-block;
-    border-radius: 50px;
-    background-color: royalblue;
-    color:#fff;
-    padding:100px 210px; 
+    &__item{
+      margin: 1.0em auto;
+      font-size: 50px;
+      color:#000;
+      text-decoration:none;
+      display:inline-block;
+      border-radius: 50px;
+      background-color: royalblue;
+      color:#fff;
+      padding:100px 210px; 
+    }
   }
 
 

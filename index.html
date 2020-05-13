@@ -39,23 +39,65 @@
     <button type="button" class="login-btn">LOGIN</button>
 </div>
 -->
+  <main class="landingLogIn">
+    <div class="landingLogIn__Logo">
+      <img class="landingLogIn__LogoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
+    </div>
+    <section class="landingLogIn__form">
+      <input type="text" placeholder="Usuario" class="landingLogIn__input landingLogIn__input--user">
+      <input type="password" placeholder="Contraseña" class="landingLogIn__input landingLogIn__input--password">
+      <button class= "landingLogIn__passwordForgotten">¿Olvidaste tu contraseña?</p>
 
-  <main class="landingR">
-    <div class="landingR__logo"></div>
+      <button class="landingLogIn__logIn">Iniciar sesión</button>
+      <p class="landingLogIn__createAccount">No tienes cuenta aún?<button class= "landingLogIn__createAccountBtn">Registrate</p>
+    </section>
+  </main>
 
-    <section class="landingR__form">
-      <input type="text" placeholder="Nombre de usuario" class="landingR__input landingR__input--user">
-      <input type="email" placeholder="Correo electronico" class="landingR__input landingR__input--mail">
-      <input type="password" placeholder="Contraseña" class="landingR__input landingR__input--password">
+  <main class="landingRegister" >
+      <img class="landingRegister__logo" src="./Images/Logo-Completo-Pequeño.png" alt="">
+    <section class="landingRegister__form">
+      <input type="text" placeholder="Nombre de usuario" class="landingRegister__input landingRegister__input--user">
+      <input type="email" placeholder="Correo electronico" class="landingRegister__input landingRegister__input--mail">
+      <input type="password" placeholder="Contraseña" class="landingRegister__input landingRegister__input--password">
 
       <!-- cambie el button para poder que salga la pantalla inicial mientras-->
       <!-- 
         <button type="button" class="landingR__register">Regístrate</button>
       -->
-      <a href="pantallaInicial.html">Registrate</a>
-
+      <button class="landingRegister__register">Registrate</button>
     </section>
   </main>
+
+  <main class="initialScreen">
+    <div class="initialScreen__logo">
+      <img class="initialScreen__logoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
+    </div>
+    <section class="initialScreen__clickScreens">
+      <a class="initialScreen__clickScreens__item" href="#">Imagen 1</a>
+      <a class="initialScreen__clickScreens__item" href="#">Imagen 2</a>
+      <a class="initialScreen__clickScreens__item" href="#">Imagen 3</a>
+    </section>
+  </main> 
+  
+  <nav class="navegationBar">
+    <section class="navegationBar__Home">
+      <img class="navegationBar__image navegationBar__Home--On" src="./Images/Icono-home Off.png" alt="">
+      <img class="navegationBar__image navegationBar__Home--Off" src="" alt="">
+    </section>
+    <section class="navegationBar__Search">
+      <img class="navegationBar__image navegationBar__Search--On" src="./Images/Home-Buscador.png" alt="">
+      <img class="navegationBar__image navegationBar__Search--Off" src="" alt="">
+    </section>
+    <section class="navegationBar__Diseases">
+      <img class="navegationBar__image navegationBar__Diseases--On" src="./Images/Icono-virus Off.png" alt="">
+      <img class="navegationBar__image navegationBar__Diseases--Off" src="" alt="">
+    </section>
+    <section class="navegationBar__User">
+      <img class="navegationBar__image navegationBar__User--On" src="./Images/Icono-User.png" alt="">
+      <img class="navegationBar__image navegationBar__User--Off" src="./Images/Icono-usuario-blanco Off.png" alt="">
+    </section>
+  </nav>
+
 
   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
   <script src="./model/AttentionPath.js"></script>
