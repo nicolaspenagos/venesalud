@@ -23,7 +23,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var registerUser = function (event) {
-  
   firebase.auth().createUserWithEmailAndPassword(inputUser.value, inputMail.value, inputPass.value).catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -43,22 +42,24 @@ var handleGoToRegister = function (event) {
 }
 goToRegisterBtn.addEventListener('click', handleGoToRegister);
 
-/*var handleSendInfoLogin = function(event) {
-  //inputUserLogIn = document.querySelector("landingLogIn__input--user");
-  //inputPasswordLogIn = document.querySelector("landingLogIn__input--password");
+var handleSendInfoLogin = function(event) {
+  inputUserLogIn = document.querySelector(".landingLogIn__input--user");
+  console.log(inputUserLogIn);
+  inputPasswordLogIn = document.querySelector(".landingLogIn__input--password");
   firebase.auth().signInWithEmailAndPassword(inputUserLogIn.value, inputPasswordLogIn.value).then(function(user) {
     console.log("El usuario se conectó");
+    handleGoToMain();
   }).catch(function(error) {
     //error
   });
-}*/
+}
 var handleGoToMain = function () {
   document.querySelector(".landingLogIn").style.display="none";
   document.querySelector(".landingRegister").style.display="none"; 
   document.querySelector(".navegationBar").style.display="flex"; 
   document.querySelector(".initialScreen").style.display="flex"; 
 }
-logInBtn.addEventListener('click', handleGoToMain);
+logInBtn.addEventListener('click', handleSendInfoLogin);
 registerBtn.addEventListener('click', handleGoToMain);
 
 var handleNavegationBarUser = function () {
