@@ -73,6 +73,13 @@ class Logic{
 
         var s12 = ["Fiebre", "Inflamación articular", "Agrandamiento del hígado y/o bazo", "Ceguera", "Opacidad de la córnea", "Dientes mellados y en forma de clavija", "Disminución en la audición o sordera"];
         this.diseases.push(new Disease("Sífilis congénita", "Es cuando el bebé nace con sífilis, la cual es una enfermedad de transmisión sexual. Se habilitó la compatibilidad con el lector de pantalla.", " Erupciones en las palmas de las manos y las plantas de los pies", s12));
+
+
+        this.helpCenters(new HelpCenter("Ulpiano Lloreda","Puesto de Salud","3.441464","-76.488837", "Calle 72A Carrera 24 Esquina","438 3232 Ext. 6050"));
+        this.helpCenters(new HelpCenter("Alfonso Bonilla Aragón","Puesto de Salud","3.423725","-76.483786", "Carrera 26U - Calle 76","4229748 - 4383232 Ext. 6040"));
+        this.helpCenters(new HelpCenter("Ciudad Córdoba","Puesto de Salud","3.396112","-76.514274", "Carrera 50 - Calle 50 Esquina","328 3435 Ext. 4050"));
+        this.helpCenters(new HelpCenter("El Poblado II","Puesto de Salud","3.422356","-76.488486", "Carrera 28-3 - Calle 72X Esquina","437 0038 - 437 2866 Ext. 5060"));
+        this.helpCenters(new HelpCenter("Intervenidas","Puesto de Salud","3.420796","-76.478325", "Transversal 103 - Diagonal 26P-15 Esquina","423 0010 Ext. 8040"));
     }
 
     /* @author Nicolas Penagos
@@ -330,5 +337,32 @@ class Logic{
 
     }
 
+      /* @author Wilson St Suarez
+    *  Create the map and marker, also, set the position to the center of the map.
+    *  @param 
+    *  @return 
+    */
+
+    iniciarMap(){
+        var coord = {lat:3.3416852 ,lng: -76.5298551};
+        var map = new google.maps.Map(document.getElementById('map'),{
+          zoom: 10,
+          center: coord
+        });
+        
+        var marker = new google.maps.Marker({
+          position: coord,
+          map: map
+        });
+    }
+
+
+//This go in the style.css class, use it when the frontend team has the space for it inthe the proper screen
+    /*
+    #map {
+        height: 800px;
+        width: 100%;
+    }
+*/
 
 }
