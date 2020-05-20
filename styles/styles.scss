@@ -178,6 +178,7 @@ html {
     align-items: center;
     justify-content: center;
 
+
     &__logo {
         height: 300px;
         width: 600px;
@@ -250,7 +251,7 @@ html {
                 display: block;
 
                 &--img {
-                    height: 40%;
+                    height: 100%;
                     width: 100%;
                     border-radius: 30px 30px 0px 0px;
                 }
@@ -332,6 +333,83 @@ html {
 
         &--Off {
             display: none;
+        }
+    }
+}
+
+.disease {
+    &info {
+        &text {
+            color: royalblue;
+
+            &--title {
+                font-size: 5em;
+                text-align: center;
+            }
+
+            &--content {
+                width: 75%;
+                font-size: 2em;
+                text-align: center;
+                margin-left: 12%;
+            }
+        }
+    }
+
+    &actions {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+        height: 100%;
+        width: 100%;
+
+        &text {
+            color: royalblue;
+            padding-left: 30px;
+
+            &--title {
+                font-size: 4em;
+            }
+
+            &--content {
+                font-size: 2em;
+            }
+        }
+
+        &__item {
+            margin: 20px 35px;
+            font-size: 50px;
+            color: #000;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 50px;
+            background-color: royalblue;
+            color: #fff;
+
+            &--short {
+                width: 41%;
+                height: 40%;
+
+                &--img {
+                    background-color: white;
+                    height: 60%;
+                    border-radius: 50px 50px 0px 0px;
+                }
+
+                &--imgJpg {
+                    width: 80%;
+                    margin-top: 25px;
+                    margin-left: 40px;
+                }
+
+                &--title {
+                    text-align: left;
+                    margin-top: 1%;
+                    margin-left: 5%;
+                    margin-bottom: 0px;
+                    font-size: 40px;
+                }
+            }
         }
     }
 }

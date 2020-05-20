@@ -21,6 +21,12 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+var firestore = firebase.firestore();
+
+var getInfo = function(){
+  console.log("al cargar el body sale esto");
+
+}
 
 var registerUser = function (event) {
   inputPass = document.querySelector(".landingRegister__input--password");
@@ -52,14 +58,48 @@ var handleSendInfoLogin = function(event) {
   console.log(inputUserLogIn.value);
   inputPasswordLogIn = document.querySelector(".landingLogIn__input--password");
   console.log(inputPasswordLogIn.value);
+  sendQuantity();
   firebase.auth().signInWithEmailAndPassword(inputUserLogIn.value, inputPasswordLogIn.value).then(function(user) {
     console.log("El usuario se conectó");
+    getUpdates();
     handleGoToMain();
   }).catch(function(error) {
     //error
   });
 }
 logInBtn.addEventListener('click', handleSendInfoLogin);
+
+var sendQuantity = function (event) {
+  console.log("Esto es antes de enviar la información a la base de datos");
+  var username = document.querySelector(".landingLogIn__input--user").value;
+  var docRefColection = firestore.doc("/"+username+"/Caracteristicas del usuario");
+    docRefColection.set({
+      nickname: username,
+      age: 18,
+      sex: "hombre",
+      id: 101010
+  }).then(function() {
+      console.log("se envió la info");
+  }).catch(function (error) {
+      console.log('Nooooo se mandó la info,', error);
+  });
+}
+
+var getUpdates = function(){
+  //console.log("entré al getUpdates!!!!!!!!!!");
+  let username = document.querySelector(".landingLogIn__input--user").value;
+  var docRefColection = firestore.doc( "/"+username+"/Caracteristicas del usuario");
+  docRefColection.onSnapshot(function(doc){
+    if(doc && doc.exists){
+      const myData = doc.data();
+      let theNickname=myData.nickname;
+      let theAge=myData.age;
+      let theSex=myData.sex;
+      let theId=myData.id;
+      console.log("El nickname del usuario es: "+theNickname+", tiene "+theAge+" años, es "+theSex+" y su ID es: "+theId);
+    }
+  });
+}
 
 var handleGoToMain = function () {
   document.querySelector(".landingLogIn").style.display="none";
