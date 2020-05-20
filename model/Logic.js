@@ -80,6 +80,11 @@ class Logic{
         this.helpCenters(new HelpCenter("Ciudad Córdoba","Puesto de Salud","3.396112","-76.514274", "Carrera 50 - Calle 50 Esquina","328 3435 Ext. 4050"));
         this.helpCenters(new HelpCenter("El Poblado II","Puesto de Salud","3.422356","-76.488486", "Carrera 28-3 - Calle 72X Esquina","437 0038 - 437 2866 Ext. 5060"));
         this.helpCenters(new HelpCenter("Intervenidas","Puesto de Salud","3.420796","-76.478325", "Transversal 103 - Diagonal 26P-15 Esquina","423 0010 Ext. 8040"));
+        this.helpCenters(new HelpCenter("el Vallado","Centro de Salud","3.406356","-76.502697", "Carrera 41B - Calle 51 Esquina","328 3435 Ext. 4001"));
+        this.helpCenters(new HelpCenter("El Retiro","Puesto de Salud","3.410035 ","-76.500128", "Carrera 39B - Calle 49 Esquina","437 0031 - 420 5990 Ext. 2060 "));
+        this.helpCenters(new HelpCenter("Decepaz","Centro de Salud","3.422619","-76.464024", "Cra. 26b #123-10","(5) 4201404"));
+        this.helpCenters(new HelpCenter("Navarro","Puesto de Salud ","3.399914"," -76.466963", "Manuela Beltran, Cali","437 7777 Ext. 3060"));
+        this.helpCenters(new HelpCenter("Ricardo Balcazar","Puesto de Salud ","3.434029","-76.492826", "Diagonal 71A Carrera 26H3 Esquina","438 3232 Ext. 6060"));
     }
 
     /* @author Nicolas Penagos
