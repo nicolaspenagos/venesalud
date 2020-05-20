@@ -2,12 +2,12 @@ body,
 html {
     height: 100%;
     width: 100%;
-
+    background-color: #f3f3f3;
     font-family: 'Rubik', sans-serif;
 }
 
 .landingRegister {
-    background-color: rgb(219, 228, 245);
+
     display: none;
     height: 100%;
     flex-direction: column;
@@ -70,7 +70,7 @@ html {
 }
 
 .landingLogIn {
-    background-color: rgb(219, 228, 245);
+
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -169,7 +169,7 @@ html {
 
 
 .initialScreen {
-    background-color: #dbe4f5;
+
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -207,31 +207,35 @@ html {
             color: #000;
             text-decoration: none;
             display: inline-block;
-            border-radius: 50px;
-            background-color: royalblue;
-            color: #fff; 
+            border-radius: 30px;
+            background-color: #2C74F9;
+            color: #fff;
 
-            &--short{
+            &--short {
                 width: 41%;
                 height: 40%;
-                &--img{
+
+                &--img {
                     background-color: white;
                     height: 60%;
-                    border-radius: 50px 50px 0px 0px;
+                    border-radius: 30px 30px 0px 0px;
                 }
-                &--imgJpg{
+
+                &--imgJpg {
                     width: 80%;
                     margin-top: 25px;
                     margin-left: 40px;
                 }
-                &--title{
+
+                &--title {
                     text-align: left;
                     margin-top: 1%;
                     margin-left: 5%;
                     margin-bottom: 0px;
                     font-size: 40px;
                 }
-                &--text{
+
+                &--text {
                     text-align: left;
                     margin-top: 1%;
                     margin-left: 3%;
@@ -241,21 +245,24 @@ html {
                 }
             }
 
-            &--large{
+            &--large {
                 width: 90%;
                 display: block;
+
                 &--img {
                     height: 40%;
                     width: 100%;
-                    border-radius: 50px 50px 0px 0px;
+                    border-radius: 30px 30px 0px 0px;
                 }
-                &--title{
+
+                &--title {
                     text-align: center;
                     margin-top: 1%;
                     margin-bottom: 0px;
                     font-size: 40px;
                 }
-                &--text{
+
+                &--text {
                     text-align: center;
                     margin-top: 1%;
                     padding: 20px;
@@ -268,18 +275,23 @@ html {
 }
 
 .navegationBar {
-    background-color: royalblue;
-    width: 100%;
+    background-color: #2C74F9;
+    width: 90%;
     display: none;
-    border-radius: 51px;
-    height: 8%;
-    position: absolute;
-    bottom: 0px;
+    position: fixed;
+    border-radius: 30px;
+    height: 7%;
+    margin: 0 auto;
+    left: 5%;
+    bottom: 2%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 
     &__image {
         margin: 20px 70px;
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
     }
 
 
