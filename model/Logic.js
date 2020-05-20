@@ -2,7 +2,7 @@ class Logic{
 
     constructor(){
 
-        this.user = [];
+ 
         this.diseases = [];
         this.families = [];
         this.users = [];
@@ -13,11 +13,66 @@ class Logic{
         this.helpCenterMap = new Map(); 
         this.idCounter = 1000;
         this.idFamily = 1;
+        //loadDataSet();
 
+
+    }
+
+    loadDataSet(){
+
+        /*
+        * Traer info de dataSet
+        */
+        // var user = new User(Name, etc...)
+    }
+
+    updateDateSet(){
+         /*
+        * Subir info de dataSet
+        */
     }
 
     logIn(){
         
+    }
+
+    loadLocalData(){
+
+        var s1 = ["Sarpullido sin picazón en las palmas de las manos y en la planta de los pies", "Llagas que no causan dolor", "Fiebre", "Cansancio", "Parálisis", "Entumecimiento", "Dolor en los musculos"];
+        this.diseases.push(new Disease("Sífilis Gestacional", "Es una enfermedad de transmisión sexual causada por una bacteria. Por lo general se adquiere por el contacto sexual con una persona que está contagiada, y en este caso, la madre se la trasmite al bebé durante el embarazo. Si la infección llega al niño le provocará graves problemas de salud o incluso la muerte. Se habilitó la compatibilidad con el lector de pantalla.", "Perdida de cabello", s1));
+
+        var s2 = ["Hinchazón abdominal", "Náuseas", "Mareos", "Escalofríos", "Fatiga", "Fiebre", "Pérdida de apetito", " Repulsión a olores fuertes", "Dolor en el abdomen", "Salivación extrema"];
+        this.diseases.push(new Disease("Embarazo Adolescente", "Se refiere a los embarazos de mujeres adolescentes entre 13 y 19 años.", "Mamas sensible e hinchadas", s2 ));
+
+        var s3 = ["Dolor articular", "Escalofríos", "Fatiga", "Fiebre", "Pérdida de apetito", "Náuseas", "Vómito", "Facilidad para desarrollar hematomas o sangrado"];
+        this.diseases.push(new Disease("Dengue", "Es una infección viral transmitida por la picadura de las hembras infectadas de mosquitos del género Aedes, que se ha constituido como un problema creciente para la salud pública mundial.", "Manchas rojas en la piel", s3));
+
+        var s4 = ["Fiebre", "Escalofríos", "Fatiga", "Sudoración", "Diarrea", "Náuseas", "Vómito", "Confusión", "Frecuencia cardíaca rápida"];
+        this.diseases.push(new Disease("Malaria", "Es una infección parasitaria de la especie plasmodium transmitida por la picadura de mosquitos anofeles infectados, si esta enfermedad no se trata a tiempo puede llevar a la muerte.", "Espasmos musculares", s4 ));
+
+        var s5 = ["Fatiga", " Fiebre", "Mareos", "Hormigueo", "Espasmos musculares", "Alucinación", "Ansiedad", "Babeo", " Confusión", "Convulsiones", "Cuello rígido", "Dificultad para tragar", "Muerte cerebral", "Pupila dilatada", "Salivación excesiva", "Vómito"];
+        this.diseases.push(new Disease("Rabia humana", "Es una enfermedad zoonótica, puede llegar a ser mortal si no se detecta a tiempo, transmitida por mordeduras y arañazos de animales.", "Convulsiones", s5));
+
+        var s6 = ["Fiebre de 38,5º C a 40,5º C", "Tos", "Escurrimiento nasal transparente, amarillo o con una mezcla de sangre", "Estornudos", "Obstrucción nasal", "Conjuntivitis", "Lesiones pequeñas e irregulares de tipo granular de color rojizo con el centro blanco azuláceo, que aparecen en la mucosa oral, en la parte interna de la mejilla."];
+        this.diseases.push(new Disease("Sarampión", "Es una enfermedad sumamente contagiosa causada por un virus. Clínicamente se diferencian dos etapas en la enfermedad, la primera, es la fase en la que se dan síntomas previos al desarrollo de la enfermedad y la segunda fase, llamada eruptiva, es la fase en la que salen las erupciones en la piel.", "Erupción con manchas rojas",s6));
+
+        var s7 = ["Comezón generalizada", " Pérdida del apetito", "Fiebre", "Cansancio", "Malestar general"];
+        this.diseases.push(new Disease("Varicela", "Es una infección viral altamente contagiosa que provoca un sarpullido similar a las ampollas en la piel y que da comezón.", "Erupción de bultos rojos o rosados", "Erupción de bultos rojos o rosados,", s7));
+
+        var s8 = ["Fatiga", "Fiebre", "Rinitis y estornudos", "Dificultades respiratorias", " Hemorragias", "Ataque intenso de tos", "Episodios de ausencia de respiración", "Ojos llorosos", "Vómito"];
+        this.diseases.push(new Disease("Tosferina", "Es una infección respiratoria altamente contagiosa, se caracteriza por ser una tos seca fuerte e incontrolable, seguida de unos sonidos agudos al inhalar, dificulta la respiración, además es altamente mortal en bebés, y tiene una gran probabilidad de causar daños cerebrales.", "Tos intensa con sonido agudo al inhalar",  s8));
+
+        var s9 = ["Sangre en las heces", "Jaqueca", "Inapetencia", "Náusea", "Fiebre", "Calambres abdominales"];
+        this.diseases.push(new Disease("Enfermedades transmitidas por alimentos(ETAS)", "Son incidentes (enfermedades) de dos personas o mas al consumir un mismo alimento", "Nauseas y dolores de estomago.", s9));
+
+        var s10 = ["Inflamación en el estómago", "Anemia, Infecciones", "Anemia", "Conducto arterial persistente", "Afectación de los vasos sanguíneos del ojo"];
+        this.diseases.push(new Disease("Bajo Peso al Nacer", "Cuando el bebé está por debajo de la curva de peso adecuado en la medida estándar, sin importar la edad gestacional.", "Peso menor a 2.499g",  s10));
+
+        var s11 = ["Hipoxia", "Complicaciones en el cordón umbilical", "Trastornos digestivos"];
+        this.diseases.push(new Disease("Mortalidad Perinatal", "Se refiere al fallecimiento del feto entre la semana 28 de gestación o entre los primeros 7 días de nacido.", "Complicaciones en la placenta", s11 ));
+
+        var s12 = ["Fiebre", "Inflamación articular", "Agrandamiento del hígado y/o bazo", "Ceguera", "Opacidad de la córnea", "Dientes mellados y en forma de clavija", "Disminución en la audición o sordera"];
+        this.diseases.push(new Disease("Sífilis congénita", "Es cuando el bebé nace con sífilis, la cual es una enfermedad de transmisión sexual. Se habilitó la compatibilidad con el lector de pantalla.", " Erupciones en las palmas de las manos y las plantas de los pies", s12));
     }
 
     /* @author Nicolas Penagos
@@ -61,6 +116,16 @@ class Logic{
 
         family.addRelative(user);
 
+    }
+
+    readFile(){
+        var fs = require("fs");
+        var text = fs.readFileSync("./myTxt.txt");
+        var textByLine = text.split("\n")
+
+        for(let i = 0; i<textByLine.length; i++){
+            Console.log(textByLine[i]);
+        }
     }
 
     /* @author Nicolas Penagos
@@ -260,6 +325,8 @@ class Logic{
         this.addAttentionpath("hospital 3", testDiseases1);
 
         console.log(this.searchAttentionPath("salmonella"));
+
+        this.readFile();
 
     }
 
