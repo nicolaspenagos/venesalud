@@ -170,7 +170,7 @@ html {
 
 .initialScreen {
     background-color: #dbe4f5;
-    height: 100%;
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: none;
@@ -181,15 +181,15 @@ html {
     &__logo {
         height: 300px;
         width: 600px;
-        margin: 40px auto;
-        align-content: center;
-        justify-content: center;
+        position: absolute;
+        top: 25px;
+        left: 35%;
     }
 
     &__logoImg {
         height: 150px;
         width: 250px;
-        margin: 40px auto;
+        margin: 20px 120px 20px 20px;
 
     }
 
@@ -197,24 +197,72 @@ html {
         flex-direction: column;
         align-items: center;
         font-size: 24pt;
+        margin-top: 200px;
+        height: 100%;
+        width: 100%;
 
         &__item {
-            margin: 1.0em auto;
+            margin: 20px 35px;
             font-size: 50px;
             color: #000;
             text-decoration: none;
             display: inline-block;
             border-radius: 50px;
             background-color: royalblue;
-            color: #fff;
-            padding: 100px 210px;
+            color: #fff; 
 
-            &--img {
-                height: 100%;
-                width: 100%;
+            &--short{
+                width: 41%;
+                height: 40%;
+                &--img{
+                    background-color: white;
+                    height: 60%;
+                    border-radius: 50px 50px 0px 0px;
+                }
+                &--imgJpg{
+                    width: 80%;
+                    margin-top: 25px;
+                    margin-left: 40px;
+                }
+                &--title{
+                    text-align: left;
+                    margin-top: 1%;
+                    margin-left: 5%;
+                    margin-bottom: 0px;
+                    font-size: 40px;
+                }
+                &--text{
+                    text-align: left;
+                    margin-top: 1%;
+                    margin-left: 3%;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    font-size: 25px;
+                }
             }
 
-            &--content {}
+            &--large{
+                width: 90%;
+                display: block;
+                &--img {
+                    height: 40%;
+                    width: 100%;
+                    border-radius: 50px 50px 0px 0px;
+                }
+                &--title{
+                    text-align: center;
+                    margin-top: 1%;
+                    margin-bottom: 0px;
+                    font-size: 40px;
+                }
+                &--text{
+                    text-align: center;
+                    margin-top: 1%;
+                    padding: 20px;
+                    margin-bottom: 0px;
+                    font-size: 30px;
+                }
+            }
         }
     }
 }

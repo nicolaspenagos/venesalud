@@ -23,7 +23,11 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var registerUser = function (event) {
-  firebase.auth().createUserWithEmailAndPassword(inputUser.value, inputMail.value, inputPass.value).catch(function (error) {
+  inputPass = document.querySelector(".landingRegister__input--password");
+  inputMail = document.querySelector(".landingRegister__input--mail");
+  firebase.auth().createUserWithEmailAndPassword(inputMail.value, inputPass.value).then(function(event){
+    handleGoToMain();
+  }).catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -43,9 +47,11 @@ var handleGoToRegister = function (event) {
 goToRegisterBtn.addEventListener('click', handleGoToRegister);
 
 var handleSendInfoLogin = function(event) {
+  console.log("entré al sendinfoLogin");
   inputUserLogIn = document.querySelector(".landingLogIn__input--user");
-  console.log(inputUserLogIn);
+  console.log(inputUserLogIn.value);
   inputPasswordLogIn = document.querySelector(".landingLogIn__input--password");
+  console.log(inputPasswordLogIn.value);
   firebase.auth().signInWithEmailAndPassword(inputUserLogIn.value, inputPasswordLogIn.value).then(function(user) {
     console.log("El usuario se conectó");
     handleGoToMain();
@@ -53,6 +59,8 @@ var handleSendInfoLogin = function(event) {
     //error
   });
 }
+logInBtn.addEventListener('click', handleSendInfoLogin);
+
 var handleGoToMain = function () {
   document.querySelector(".landingLogIn").style.display="none";
   document.querySelector(".landingRegister").style.display="none"; 
@@ -60,7 +68,7 @@ var handleGoToMain = function () {
   document.querySelector(".initialScreen").style.display="flex"; 
 }
 logInBtn.addEventListener('click', handleSendInfoLogin);
-registerBtn.addEventListener('click', handleGoToMain);
+registerBtn.addEventListener('click', registerUser);
 
 var handleNavegationBarUser = function () {
   document.querySelector(".navegationBar__User--On").style.display="none";
