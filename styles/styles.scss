@@ -2,6 +2,8 @@ body,
 html {
     height: 100%;
     width: 100%;
+
+    font-family: 'Rubik', sans-serif;
 }
 
 .landingRegister {
@@ -66,6 +68,7 @@ html {
         box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
     }
 }
+
 .landingLogIn {
     background-color: rgb(219, 228, 245);
     height: 100%;
@@ -79,6 +82,7 @@ html {
         width: 600px;
         margin: 40px auto;
     }
+
     &__LogoImg {
         height: 350px;
         width: 600px;
@@ -132,7 +136,8 @@ html {
 
         box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
     }
-    &__createAccountBtn{
+
+    &__createAccountBtn {
         border: none;
         position: relative;
         background-color: inherit;
@@ -143,19 +148,21 @@ html {
         color: royalblue;
         margin-top: auto;
     }
-    &__createAccount{
+
+    &__createAccount {
         position: absolute;
         bottom: 0px;
         font-size: 32px;
     }
-    &__passwordForgotten{
+
+    &__passwordForgotten {
         border: none;
-            background-color: inherit;
-            padding: 14px 28px;
-            font-size: 32px;
-            cursor: pointer;
-            display: inline-block;
-            color: royalblue;
+        background-color: inherit;
+        padding: 14px 28px;
+        font-size: 32px;
+        cursor: pointer;
+        display: inline-block;
+        color: royalblue;
     }
 }
 
@@ -170,45 +177,49 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     &__logo {
-      height: 300px;
-      width: 600px;
-      margin: 40px auto;
-      align-content: center;
-      justify-content: center;
-      }
+        height: 300px;
+        width: 600px;
+        margin: 40px auto;
+        align-content: center;
+        justify-content: center;
+    }
+
     &__logoImg {
-      height: 150px;
-      width: 250px;
-      margin: 40px auto;
-      
-     }
+        height: 150px;
+        width: 250px;
+        margin: 40px auto;
+
+    }
+
     &__clickScreens {
-            flex-direction: column;
-            align-items: center;
-    font-size: 24pt;
-    &__item{
-        margin: 1.0em auto;
-        font-size: 50px;
-        color:#000;
-        text-decoration:none;
-        display:inline-block;
-        border-radius: 50px;
-        background-color: royalblue;
-        color:#fff;
-        padding:100px 210px; 
-        &--img{
-            height: 100%;
-            width: 100%;
-        }
-        &--content{
+        flex-direction: column;
+        align-items: center;
+        font-size: 24pt;
 
+        &__item {
+            margin: 1.0em auto;
+            font-size: 50px;
+            color: #000;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 50px;
+            background-color: royalblue;
+            color: #fff;
+            padding: 100px 210px;
+
+            &--img {
+                height: 100%;
+                width: 100%;
+            }
+
+            &--content {}
         }
     }
-    }
-  }
+}
 
-  .navegationBar{
+.navegationBar {
     background-color: royalblue;
     width: 100%;
     display: none;
@@ -217,46 +228,53 @@ html {
     position: absolute;
     bottom: 0px;
 
-    &__image{
+    &__image {
         margin: 20px 70px;
         width: 100px;
         height: 100px;
     }
 
 
-    &__Home{
-        &--On{
+    &__Home {
+        &--On {
             display: flex;
         }
-        &--Off{
+
+        &--Off {
             display: none;
         }
     }
-    &__Search{
-        &--On{
+
+    &__Search {
+        &--On {
             display: flex;
         }
-        &--Off{
+
+        &--Off {
             display: none;
         }
     }
-    &__Diseases{
-        &--On{
+
+    &__Diseases {
+        &--On {
             display: flex;
         }
-        &--Off{
+
+        &--Off {
             display: none;
         }
     }
-    &__User{
-        &--On{
+
+    &__User {
+        &--On {
             display: flex;
         }
-        &--Off{
+
+        &--Off {
             display: none;
         }
     }
-  }
+}
 
 
 
