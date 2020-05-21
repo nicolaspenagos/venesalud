@@ -339,7 +339,7 @@ html {
 
 .disease {
     &info {
-        &text {
+        &__text {
             color: royalblue;
 
             &--title {
@@ -356,14 +356,14 @@ html {
         }
     }
 
-    &actions {
+    &__actions {
         flex-direction: column;
         align-items: center;
         margin-top: 100px;
         height: 100%;
         width: 100%;
 
-        &text {
+        &__text {
             color: royalblue;
             padding-left: 30px;
 
