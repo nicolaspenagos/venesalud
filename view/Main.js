@@ -61,7 +61,7 @@ var handleSendInfoLogin = function(event) {
   sendQuantity();
   firebase.auth().signInWithEmailAndPassword(inputUserLogIn.value, inputPasswordLogIn.value).then(function(user) {
     console.log("El usuario se conectó");
-    getUpdates();
+    //getUpdates();
     handleGoToMain();
   }).catch(function(error) {
     //error
@@ -75,31 +75,50 @@ var sendQuantity = function (event) {
   var docRefColection = firestore.doc("/"+username+"/Caracteristicas del usuario");
     docRefColection.set({
       nickname: username,
-      age: 18,
-      sex: "hombre",
-      id: 101010
+      age: 40,
+      sex: "male",
+      familyMembers: ["handemore7@gmail.com","correo1@gmail.com", "correo2@gmail.com", "correo3@gmail.com"],
+      id: 101011,
   }).then(function() {
       console.log("se envió la info");
+
   }).catch(function (error) {
       console.log('Nooooo se mandó la info,', error);
   });
 }
 
-var getUpdates = function(){
+var getUpdates = function(username, deep){
   //console.log("entré al getUpdates!!!!!!!!!!");
-  let username = document.querySelector(".landingLogIn__input--user").value;
+  //let username = document.querySelector(".landingLogIn__input--user").value;
   var docRefColection = firestore.doc( "/"+username+"/Caracteristicas del usuario");
-  docRefColection.onSnapshot(function(doc){
+  docRefColection.get().then(function(doc){
     if(doc && doc.exists){
       const myData = doc.data();
       let theNickname=myData.nickname;
       let theAge=myData.age;
       let theSex=myData.sex;
       let theId=myData.id;
+
+      if(deep){
+        // usuario principal
+        setMainUser(myData)
+      } else {
+        // parte de la familia
+        addToFamily(myData)
+      }
+
+      console.log(myData.familyMembers)
+      if(deep && myData.familyMembers && myData.familyMembers.length){
+        myData.familyMembers.forEach(function(member) {
+          getUpdates(member);
+        })
+      }
       console.log("El nickname del usuario es: "+theNickname+", tiene "+theAge+" años, es "+theSex+" y su ID es: "+theId);
     }
   });
 }
+
+getUpdates('handemore7@gmail.com', true);
 
 var handleGoToMain = function () {
   document.querySelector(".landingLogIn").style.display="none";

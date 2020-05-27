@@ -351,23 +351,23 @@ html {
   display: none;
 }
 
-.diseaseinfotext {
+.diseaseinfo__text {
   color: royalblue;
 }
 
-.diseaseinfotext--title {
+.diseaseinfo__text--title {
   font-size: 5em;
   text-align: center;
 }
 
-.diseaseinfotext--content {
+.diseaseinfo__text--content {
   width: 75%;
   font-size: 2em;
   text-align: center;
   margin-left: 12%;
 }
 
-.diseaseactions {
+.disease__actions {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -380,20 +380,20 @@ html {
   width: 100%;
 }
 
-.diseaseactionstext {
+.disease__actions__text {
   color: royalblue;
   padding-left: 30px;
 }
 
-.diseaseactionstext--title {
+.disease__actions__text--title {
   font-size: 4em;
 }
 
-.diseaseactionstext--content {
+.disease__actions__text--content {
   font-size: 2em;
 }
 
-.diseaseactions__item {
+.disease__actions__item {
   margin: 20px 35px;
   font-size: 50px;
   color: #000;
@@ -404,24 +404,24 @@ html {
   color: #fff;
 }
 
-.diseaseactions__item--short {
+.disease__actions__item--short {
   width: 41%;
   height: 40%;
 }
 
-.diseaseactions__item--short--img {
+.disease__actions__item--short--img {
   background-color: white;
   height: 60%;
   border-radius: 50px 50px 0px 0px;
 }
 
-.diseaseactions__item--short--imgJpg {
+.disease__actions__item--short--imgJpg {
   width: 80%;
   margin-top: 25px;
   margin-left: 40px;
 }
 
-.diseaseactions__item--short--title {
+.disease__actions__item--short--title {
   text-align: left;
   margin-top: 1%;
   margin-left: 5%;
