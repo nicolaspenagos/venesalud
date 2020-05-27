@@ -8,6 +8,8 @@ var goToRegisterBtn = document.querySelector(".landingLogIn__createAccountBtn");
 var inputUserLogIn = document.querySelector("landingLogIn__input--user");
 var inputPasswordLogIn = document.querySelector("landingLogIn__input--password");
 var userInformation = document.querySelector(".navegationBar__User");
+var gmaps=document.querySelector(".gmaps");
+var gmapsBtn=document.querySelector(".gomap");
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyBoMBY4QXq_jozUkArf3x1DpDqDmDnJUPM",
@@ -44,7 +46,12 @@ var registerUser = function (event) {
 //Aqui termina lo de firebase
 
 //Aqui empiezan las interacciones como cambios de pantalla
+var handleGoTomap=function (){
+  document.querySelector(".gmaps").style.display="block";
+ 
+}
 
+gmapsBtn.addEventListener('click',handleGoTomap);
 
 var handleGoToRegister = function (event) {
   document.querySelector(".landingLogIn").style.display="none";

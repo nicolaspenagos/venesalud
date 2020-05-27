@@ -6,6 +6,11 @@ html {
   font-family: 'Rubik', sans-serif;
 }
 
+#map {
+  height: 800px;
+  width: 100%;
+}
+
 .landingRegister {
   display: none;
   height: 100%;

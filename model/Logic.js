@@ -13,6 +13,7 @@ class Logic{
         this.helpCenterMap = new Map(); 
         this.idCounter = 1000;
         this.idFamily = 1;
+        this.iniciarMap();
         //loadDataSet();
 
 
@@ -75,16 +76,12 @@ class Logic{
         this.diseases.push(new Disease("Sífilis congénita", "Es cuando el bebé nace con sífilis, la cual es una enfermedad de transmisión sexual. Se habilitó la compatibilidad con el lector de pantalla.", " Erupciones en las palmas de las manos y las plantas de los pies", s12));
 
 
-        this.helpCenters(new HelpCenter("Ulpiano Lloreda","Puesto de Salud","3.441464","-76.488837", "Calle 72A Carrera 24 Esquina","438 3232 Ext. 6050"));
+       /* this.helpCenters(new HelpCenter("Ulpiano Lloreda","Puesto de Salud","3.441464","-76.488837", "Calle 72A Carrera 24 Esquina","438 3232 Ext. 6050"));
         this.helpCenters(new HelpCenter("Alfonso Bonilla Aragón","Puesto de Salud","3.423725","-76.483786", "Carrera 26U - Calle 76","4229748 - 4383232 Ext. 6040"));
         this.helpCenters(new HelpCenter("Ciudad Córdoba","Puesto de Salud","3.396112","-76.514274", "Carrera 50 - Calle 50 Esquina","328 3435 Ext. 4050"));
         this.helpCenters(new HelpCenter("El Poblado II","Puesto de Salud","3.422356","-76.488486", "Carrera 28-3 - Calle 72X Esquina","437 0038 - 437 2866 Ext. 5060"));
         this.helpCenters(new HelpCenter("Intervenidas","Puesto de Salud","3.420796","-76.478325", "Transversal 103 - Diagonal 26P-15 Esquina","423 0010 Ext. 8040"));
-        this.helpCenters(new HelpCenter("el Vallado","Centro de Salud","3.406356","-76.502697", "Carrera 41B - Calle 51 Esquina","328 3435 Ext. 4001"));
-        this.helpCenters(new HelpCenter("El Retiro","Puesto de Salud","3.410035 ","-76.500128", "Carrera 39B - Calle 49 Esquina","437 0031 - 420 5990 Ext. 2060 "));
-        this.helpCenters(new HelpCenter("Decepaz","Centro de Salud","3.422619","-76.464024", "Cra. 26b #123-10","(5) 4201404"));
-        this.helpCenters(new HelpCenter("Navarro","Puesto de Salud ","3.399914"," -76.466963", "Manuela Beltran, Cali","437 7777 Ext. 3060"));
-        this.helpCenters(new HelpCenter("Ricardo Balcazar","Puesto de Salud ","3.434029","-76.492826", "Diagonal 71A Carrera 26H3 Esquina","438 3232 Ext. 6060"));
+        */
     }
 
     /* @author Nicolas Penagos
@@ -349,6 +346,7 @@ class Logic{
     */
 
     iniciarMap(){
+        console.log("Iniciar map");
         var coord = {lat:3.3416852 ,lng: -76.5298551};
         var map = new google.maps.Map(document.getElementById('map'),{
           zoom: 10,
@@ -364,10 +362,9 @@ class Logic{
 
 //This go in the style.css class, use it when the frontend team has the space for it inthe the proper screen
     /*
-    #map {
-        height: 800px;
-        width: 100%;
-    }
+    
+   
+
 */
 
 }
