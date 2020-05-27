@@ -100,14 +100,16 @@
         <p class="initialScreen__clickScreens__item--short--text">Resuelve un formulario que nos ayudará a entender que
           es lo que estás padeciendo</p>
       </div>
-      <div class="initialScreen__clickScreens__item initialScreen__clickScreens__item--short">
-        <div class="initialScreen__clickScreens__item--short--img">
-          <img class="initialScreen__clickScreens__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+      <a class="goToDisease" >
+        <div class="initialScreen__clickScreens__item initialScreen__clickScreens__item--short">
+          <div class="initialScreen__clickScreens__item--short--img">
+            <img class="initialScreen__clickScreens__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+          </div>
+          <p class="initialScreen__clickScreens__item--short--title"><strong>Enfermedades</strong></p>
+          <p class="initialScreen__clickScreens__item--short--text">Toda la información acerca de los problemas de salud
+            más habituales</p>
         </div>
-        <p class="initialScreen__clickScreens__item--short--title"><strong>Enfermedades</strong></p>
-        <p class="initialScreen__clickScreens__item--short--text">Toda la información acerca de los problemas de salud
-          más habituales</p>
-      </div>
+      </a>
       <div class="initialScreen__clickScreens__item initialScreen__clickScreens__item--large">
         <img class="initialScreen__clickScreens__item--large--img" src="./Images/homeRutas.jpg" alt="">
         <p class="initialScreen__clickScreens__item--large--title"><strong>Rutas de atención</strong></p>
@@ -116,15 +118,11 @@
     </section>
   </main>
 
-  <main style="display: none;">
-    <h1>¿Cuales son tus sintomas?</h1>
-
-
-
-
-  </main>
-
-  <main class="disease">
+  
+  <main class="disease" style="display: none;">
+    <main>
+      <h1>¿Cuales son tus sintomas?</h1>
+    </main>
     <img src="./Images/back.png" alt="">
     <img src="./Images/logo_solo.png" alt="">
     <div class="diseaseinfo">
@@ -158,10 +156,12 @@
   </main>
 
   <nav class="navegationBar">
-    <section class="navegationBar__Home">
-      <img class="navegationBar__image navegationBar__Home--On" src="./Images/Icono-home Off.png" alt="">
-      <img class="navegationBar__image navegationBar__Home--Off" src="" alt="">
-    </section>
+    <a class="navegationBar__HomeBtn">
+      <section class="navegationBar__Home">
+        <img class="navegationBar__image navegationBar__Home--On" src="./Images/Icono-home Off.png" alt="">
+        <img class="navegationBar__image navegationBar__Home--Off" src="" alt="">
+      </section>
+    </a>
     <section class="navegationBar__Search">
       <img class="navegationBar__image navegationBar__Search--On" src="./Images/Home-Buscador.png" alt="">
       <img class="navegationBar__image navegationBar__Search--Off" src="" alt="">

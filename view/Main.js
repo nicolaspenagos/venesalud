@@ -10,6 +10,7 @@ var inputPasswordLogIn = document.querySelector("landingLogIn__input--password")
 var userInformation = document.querySelector(".navegationBar__User");
 var gmaps=document.querySelector(".gmaps");
 var gmapsBtn=document.querySelector(".gomap");
+var goToDisease = document.querySelector(".goToDisease");
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyBoMBY4QXq_jozUkArf3x1DpDqDmDnJUPM",
@@ -27,7 +28,6 @@ var firestore = firebase.firestore();
 
 var getInfo = function(){
   console.log("al cargar el body sale esto");
-
 }
 
 var registerUser = function (event) {
@@ -46,11 +46,17 @@ var registerUser = function (event) {
 //Aqui termina lo de firebase
 
 //Aqui empiezan las interacciones como cambios de pantalla
+
+var handleGoToDisease = function(){
+  document.querySelector(".initialScreen").style.display="none";
+  document.querySelector(".disease").style.display="block"; 
+}
+goToDisease.addEventListener('click', handleGoToDisease);
+
 var handleGoTomap=function (){
   document.querySelector(".gmaps").style.display="block";
- 
+  document.querySelector(".disease").style.display="none"; 
 }
-
 gmapsBtn.addEventListener('click',handleGoTomap);
 
 var handleGoToRegister = function (event) {
@@ -132,9 +138,12 @@ var handleGoToMain = function () {
   document.querySelector(".landingRegister").style.display="none"; 
   document.querySelector(".navegationBar").style.display="flex"; 
   document.querySelector(".initialScreen").style.display="flex"; 
+  document.querySelector(".disease").style.display="none";
+  document.querySelector(".gmaps").style.display="none";
 }
 logInBtn.addEventListener('click', handleSendInfoLogin);
 registerBtn.addEventListener('click', registerUser);
+document.querySelector(".navegationBar__HomeBtn").addEventListener('click', handleGoToMain);
 
 var handleNavegationBarUser = function () {
   document.querySelector(".navegationBar__User--On").style.display="none";
