@@ -8,8 +8,8 @@ var goToRegisterBtn = document.querySelector(".landingLogIn__createAccountBtn");
 var inputUserLogIn = document.querySelector("landingLogIn__input--user");
 var inputPasswordLogIn = document.querySelector("landingLogIn__input--password");
 var userInformation = document.querySelector(".navegationBar__User");
-var gmaps=document.querySelector(".gmaps");
-var gmapsBtn=document.querySelector(".gomap");
+var gmaps = document.querySelector(".gmaps");
+var gmapsBtn = document.querySelector(".gomap");
 var goToDisease = document.querySelector(".goToDisease");
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -26,14 +26,14 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var firestore = firebase.firestore();
 
-var getInfo = function(){
+var getInfo = function () {
   console.log("al cargar el body sale esto");
 }
 
 var registerUser = function (event) {
   inputPass = document.querySelector(".landingRegister__input--password");
   inputMail = document.querySelector(".landingRegister__input--mail");
-  firebase.auth().createUserWithEmailAndPassword(inputMail.value, inputPass.value).then(function(event){
+  firebase.auth().createUserWithEmailAndPassword(inputMail.value, inputPass.value).then(function (event) {
     handleGoToMain();
   }).catch(function (error) {
     // Handle Errors here.
@@ -47,36 +47,36 @@ var registerUser = function (event) {
 
 //Aqui empiezan las interacciones como cambios de pantalla
 
-var handleGoToDisease = function(){
-  document.querySelector(".initialScreen").style.display="none";
-  document.querySelector(".disease").style.display="block"; 
+var handleGoToDisease = function () {
+  document.querySelector(".initialScreen").style.display = "none";
+  document.querySelector(".disease").style.display = "block";
 }
 goToDisease.addEventListener('click', handleGoToDisease);
 
-var handleGoTomap=function (){
-  document.querySelector(".gmaps").style.display="block";
-  document.querySelector(".disease").style.display="none"; 
+var handleGoTomap = function () {
+  document.querySelector(".gmaps").style.display = "block";
+  document.querySelector(".disease").style.display = "none";
 }
-gmapsBtn.addEventListener('click',handleGoTomap);
+gmapsBtn.addEventListener('click', handleGoTomap);
 
 var handleGoToRegister = function (event) {
-  document.querySelector(".landingLogIn").style.display="none";
-  document.querySelector(".landingRegister").style.display="flex"; 
+  document.querySelector(".landingLogIn").style.display = "none";
+  document.querySelector(".landingRegister").style.display = "flex";
 }
 goToRegisterBtn.addEventListener('click', handleGoToRegister);
 
-var handleSendInfoLogin = function(event) {
+var handleSendInfoLogin = function (event) {
   console.log("entré al sendinfoLogin");
   inputUserLogIn = document.querySelector(".landingLogIn__input--user");
   console.log(inputUserLogIn.value);
   inputPasswordLogIn = document.querySelector(".landingLogIn__input--password");
   console.log(inputPasswordLogIn.value);
   sendQuantity();
-  firebase.auth().signInWithEmailAndPassword(inputUserLogIn.value, inputPasswordLogIn.value).then(function(user) {
+  firebase.auth().signInWithEmailAndPassword(inputUserLogIn.value, inputPasswordLogIn.value).then(function (user) {
     console.log("El usuario se conectó");
     //getUpdates();
     handleGoToMain();
-  }).catch(function(error) {
+  }).catch(function (error) {
     //error
   });
 }
@@ -85,34 +85,34 @@ logInBtn.addEventListener('click', handleSendInfoLogin);
 var sendQuantity = function (event) {
   console.log("Esto es antes de enviar la información a la base de datos");
   var username = document.querySelector(".landingLogIn__input--user").value;
-  var docRefColection = firestore.doc("/"+username+"/Caracteristicas del usuario");
-    docRefColection.set({
-      nickname: username,
-      age: 40,
-      sex: "male",
-      familyMembers: ["handemore7@gmail.com","correo1@gmail.com", "correo2@gmail.com", "correo3@gmail.com"],
-      id: 101011,
-  }).then(function() {
-      console.log("se envió la info");
+  var docRefColection = firestore.doc("/" + username + "/Caracteristicas del usuario");
+  docRefColection.set({
+    nickname: username,
+    age: 40,
+    sex: "male",
+    familyMembers: ["handemore7@gmail.com", "correo1@gmail.com", "correo2@gmail.com", "correo3@gmail.com"],
+    id: 101011,
+  }).then(function () {
+    console.log("se envió la info");
 
   }).catch(function (error) {
-      console.log('Nooooo se mandó la info,', error);
+    console.log('Nooooo se mandó la info,', error);
   });
 }
 
-var getUpdates = function(username, deep){
+var getUpdates = function (username, deep) {
   //console.log("entré al getUpdates!!!!!!!!!!");
   //let username = document.querySelector(".landingLogIn__input--user").value;
-  var docRefColection = firestore.doc( "/"+username+"/Caracteristicas del usuario");
-  docRefColection.get().then(function(doc){
-    if(doc && doc.exists){
+  var docRefColection = firestore.doc("/" + username + "/Caracteristicas del usuario");
+  docRefColection.get().then(function (doc) {
+    if (doc && doc.exists) {
       const myData = doc.data();
-      let theNickname=myData.nickname;
-      let theAge=myData.age;
-      let theSex=myData.sex;
-      let theId=myData.id;
+      let theNickname = myData.nickname;
+      let theAge = myData.age;
+      let theSex = myData.sex;
+      let theId = myData.id;
 
-      if(deep){
+      if (deep) {
         // usuario principal
         setMainUser(myData)
       } else {
@@ -121,12 +121,12 @@ var getUpdates = function(username, deep){
       }
 
       console.log(myData.familyMembers)
-      if(deep && myData.familyMembers && myData.familyMembers.length){
-        myData.familyMembers.forEach(function(member) {
+      if (deep && myData.familyMembers && myData.familyMembers.length) {
+        myData.familyMembers.forEach(function (member) {
           getUpdates(member);
         })
       }
-      console.log("El nickname del usuario es: "+theNickname+", tiene "+theAge+" años, es "+theSex+" y su ID es: "+theId);
+      console.log("El nickname del usuario es: " + theNickname + ", tiene " + theAge + " años, es " + theSex + " y su ID es: " + theId);
     }
   });
 }
@@ -134,20 +134,20 @@ var getUpdates = function(username, deep){
 getUpdates('handemore7@gmail.com', true);
 
 var handleGoToMain = function () {
-  document.querySelector(".landingLogIn").style.display="none";
-  document.querySelector(".landingRegister").style.display="none"; 
-  document.querySelector(".navegationBar").style.display="flex"; 
-  document.querySelector(".initialScreen").style.display="flex"; 
-  document.querySelector(".disease").style.display="none";
-  document.querySelector(".gmaps").style.display="none";
+  document.querySelector(".landingLogIn").style.display = "none";
+  document.querySelector(".landingRegister").style.display = "none";
+  document.querySelector(".navegationBar").style.display = "flex";
+  document.querySelector(".initialScreen").style.display = "flex";
+  document.querySelector(".disease").style.display = "none";
+  document.querySelector(".gmaps").style.display = "none";
 }
 logInBtn.addEventListener('click', handleSendInfoLogin);
 registerBtn.addEventListener('click', registerUser);
 document.querySelector(".navegationBar__HomeBtn").addEventListener('click', handleGoToMain);
 
 var handleNavegationBarUser = function () {
-  document.querySelector(".navegationBar__User--On").style.display="none";
-  document.querySelector(".navegationBar__User--Off").style.display="flex"; 
+  document.querySelector(".navegationBar__User--On").style.display = "none";
+  document.querySelector(".navegationBar__User--Off").style.display = "flex";
 }
 userInformation.addEventListener('click', handleNavegationBarUser);
 
@@ -156,3 +156,5 @@ userInformation.addEventListener('click', handleNavegationBarUser);
 let control = new Controller();
 control.test();
 control.logIn();
+
+// Intento de formulario

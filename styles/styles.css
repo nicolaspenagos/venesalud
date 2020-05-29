@@ -515,4 +515,14 @@ html {
   border-color: #2056b9;
   margin: .15em 1.5em .15em .15em;
 }
+
+.symptomSel__send {
+  font-size: 3em;
+  background-color: #2056b9;
+  color: #fff;
+  width: 80%;
+  margin: .5em auto;
+  border-radius: 25px;
+  padding: .5em 0;
+}
 /*# sourceMappingURL=styles.css.map */
