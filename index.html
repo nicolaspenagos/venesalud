@@ -24,12 +24,13 @@
 
 <body>
 
-<!--The Gmaps library and key-->
-<section class="gmaps" style="display: flex;"> 
-  
-<div id="map"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
-</section>
+  <!--The Gmaps library and key-->
+  <section class="gmaps" style="display: none;">
+    <div id="map"></div>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap">
+    </script>
+  </section>
 
 
 
@@ -52,7 +53,7 @@
     <button type="button" class="login-btn">LOGIN</button>
 </div>
 -->
-  <main class="landingLogIn " style="display: none;">
+  <main class="landingLogIn">
     <div class="landingLogIn__Logo">
       <img class="landingLogIn__LogoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
     </div>
@@ -65,9 +66,9 @@
         <p class="landingLogIn__createAccount">No tienes cuenta aún?<button
             class="landingLogIn__createAccountBtn"><strong>Registrate</strong></p>
     </section>
-  </gma>
+  </main>
 
-  <main class="landingRegister" style="display: none;">
+  <main class="landingRegister">
     <img class="landingRegister__logo" src="./Images/Logo-Completo-Pequeño.png" alt="">
     <section class="landingRegister__form">
       <input type="text" placeholder="Nombre de usuario" class="landingRegister__input landingRegister__input--user">
@@ -82,7 +83,7 @@
     </section>
   </main>
 
-  <main class="initialScreen" style="display: none;">
+  <main class="initialScreen">
     <div class="initialScreen__logo">
       <img class="initialScreen__logoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
     </div>
@@ -101,7 +102,7 @@
         <p class="initialScreen__clickScreens__item--short--text">Resuelve un formulario que nos ayudará a entender que
           es lo que estás padeciendo</p>
       </div>
-      <a class="goToDisease" >
+      <a class="goToDisease">
         <div class="initialScreen__clickScreens__item initialScreen__clickScreens__item--short">
           <div class="initialScreen__clickScreens__item--short--img">
             <img class="initialScreen__clickScreens__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
@@ -119,8 +120,8 @@
     </section>
   </main>
 
-  
-  <main class="disease" style="display: none;" >
+
+  <main class="disease" style="display: none;">
     <main>
       <h1>¿Cuales son tus sintomas?</h1>
     </main>
@@ -156,6 +157,50 @@
     <input type="button" value="Ir al mapa" class="gomap">
   </main>
 
+  <main class="symptomSel">
+    <div class="symptomSel__top">
+      <a class="symptomSel__back">
+        <img src="./Images/back.png" alt="">
+      </a>
+      <img src="./Images/logo_solo.png" alt="">
+    </div>
+
+    <div class="symptomSel__mainform">
+      <label>
+        <input type="radio" class="symptomSel__checkbox" id="">
+        Perdida de cabello
+      </label>
+      <label>
+        <input type="radio" class="symptomSel__checkbox" id="">
+        Hemorragia severa
+      </label>
+      <label>
+        <input type="radio" class="symptomSel__checkbox" id="">
+        Manos sensibles e hinchadas
+      </label>
+      <label>
+        <input type="radio" class="symptomSel__checkbox" id="">
+        Complicaciones en la placenta
+      </label>
+      <label>
+        <input type="radio" class="symptomSel__checkbox" id="">
+        Infecciones respiratorias
+      </label>
+      <label>
+        <input type="radio" class="symptomSel__checkbox" id="">
+        Trastornos digestivos
+      </label>
+      <label>
+        <input type="radio" class="symptomSel__checkbox" id="">
+        Erupciones en manos y pies
+      </label>
+
+      <button class="symptomSel__send">Siguiente</button>
+
+    </div>
+
+  </main>
+
   <nav class="navegationBar">
     <a class="navegationBar__HomeBtn">
       <section class="navegationBar__Home">
@@ -187,7 +232,7 @@
   <script src="./model/Family.js"></script>
   <script src="./model/Logic.js"></script>
   <script src="./controller/Controller.js"></script>
- 
+
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
 
