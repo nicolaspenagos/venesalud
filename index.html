@@ -25,7 +25,8 @@
 <body>
 
 <!--The Gmaps library and key-->
-<section class="gmaps" style="display: none;"> 
+<section class="gmaps" style="display: flex;"> 
+  
 <div id="map"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
 </section>
@@ -51,7 +52,7 @@
     <button type="button" class="login-btn">LOGIN</button>
 </div>
 -->
-  <main class="landingLogIn">
+  <main class="landingLogIn " style="display: none;">
     <div class="landingLogIn__Logo">
       <img class="landingLogIn__LogoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
     </div>
@@ -64,9 +65,9 @@
         <p class="landingLogIn__createAccount">No tienes cuenta aún?<button
             class="landingLogIn__createAccountBtn"><strong>Registrate</strong></p>
     </section>
-  </main>
+  </gma>
 
-  <main class="landingRegister">
+  <main class="landingRegister" style="display: none;">
     <img class="landingRegister__logo" src="./Images/Logo-Completo-Pequeño.png" alt="">
     <section class="landingRegister__form">
       <input type="text" placeholder="Nombre de usuario" class="landingRegister__input landingRegister__input--user">
@@ -81,7 +82,7 @@
     </section>
   </main>
 
-  <main class="initialScreen">
+  <main class="initialScreen" style="display: none;">
     <div class="initialScreen__logo">
       <img class="initialScreen__logoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
     </div>
@@ -119,7 +120,7 @@
   </main>
 
   
-  <main class="disease" style="display: none;">
+  <main class="disease" style="display: none;" >
     <main>
       <h1>¿Cuales son tus sintomas?</h1>
     </main>

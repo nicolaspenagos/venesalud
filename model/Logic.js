@@ -2,6 +2,7 @@ class Logic{
 
     constructor(){
 
+
  
         this.diseases = [];
         this.families = [];
@@ -17,7 +18,9 @@ class Logic{
         //loadDataSet();
 
 
+
     }
+    
 
     loadDataSet(){
 
@@ -127,7 +130,7 @@ class Logic{
 
     }
 
-    readFile(){
+    /*readFile(){
         var fs = require("fs");
         var text = fs.readFileSync("./myTxt.txt");
         var textByLine = text.split("\n")
@@ -135,7 +138,7 @@ class Logic{
         for(let i = 0; i<textByLine.length; i++){
             Console.log(textByLine[i]);
         }
-    }
+    }*/
 
     /* @author Nicolas Penagos
     *  Searchs for a family by given family name
@@ -288,6 +291,8 @@ class Logic{
         return foundAP;
     }
 
+ 
+
     test(){
        // this.family = new Family("firstFamily"); 
      //   this.family.addRelative(1, "nick",14, "male"); 
@@ -334,8 +339,13 @@ class Logic{
         this.addAttentionpath("hospital 3", testDiseases1);
 
         console.log(this.searchAttentionPath("salmonella"));
+       
 
-        this.readFile();
+        //this.readFile();
+        this.coordenadasArray(); 
+        var coord = {lat:helpCenterArray[0].Latitud ,lng: helpCenterArray[0].Longitud};
+
+            console.log(coord.lat + " "+ coord.lng);
 
     }
 
@@ -345,26 +355,46 @@ class Logic{
     *  @return 
     */
 
+
     iniciarMap(){
         console.log("Iniciar map");
-        var coord = {lat:3.3416852 ,lng: -76.5298551};
+        var coord = {lat:3.3416852 ,lng: -76.5298551};      
         var map = new google.maps.Map(document.getElementById('map'),{
-          zoom: 10,
-          center: coord
-        });
-        
-        var marker = new google.maps.Marker({
-          position: coord,
-          map: map
-        });
+            zoom: 10,
+            center: coord
+          });
+
+
+       this.coordenadasArray(map); 
+  
+
+    }
+    
+
+    coordenadasArray(map){
+        var coordenada= [];
+        var lat; 
+        var lng;  
+        for (let index = 0; index < 87; index++) {
+            console.log("loquesea");
+            var coord = {lat:helpCenterArray[index].Latitud ,lng: helpCenterArray[index].Longitud};
+            coordenada[index]= coord; 
+            lat = parseFloat(coordenada[index].lat); 
+            lng =  parseFloat(coordenada[index].lng); 
+            var myLatlng = new google.maps.LatLng(parseFloat(lat),parseFloat(lng));
+            console.log(lng);
+           
+            var marker = new google.maps.Marker({
+                position: {lat:lat ,lng: lng},
+                map: map
+              });
+        }
+
+      
     }
 
+ 
 
-//This go in the style.css class, use it when the frontend team has the space for it inthe the proper screen
-    /*
-    
-   
 
-*/
 
 }

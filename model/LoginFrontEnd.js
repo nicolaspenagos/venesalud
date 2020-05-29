@@ -18,4 +18,4 @@ var myFunction = function (event) {
         eyeHidden.style.display = "block";
     }
 }
-hideEye.addEventListener('click', myFunction);
+//hideEye.addEventListener('click', myFunction);
