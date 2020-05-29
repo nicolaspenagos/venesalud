@@ -422,6 +422,64 @@ html {
     }
 }
 
+.symptomSel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+
+    &__top {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    &__back {
+        position: absolute;
+        left: 5%;
+        top: 3%;
+    }
+
+    &__logo {
+        margin: 3% auto 5px;
+        width: 90px;
+    }
+
+    &__title {
+        text-align: center;
+        margin: 1em auto;
+        font-size: 4em;
+        width: 40%;
+        color: #2C74F9;
+    }
+
+    &__mainform {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__label {
+        font-size: 2.7em;
+        margin: 1em auto;
+        width: 80%;
+        background-color: #fff;
+        color: rgb(32, 86, 185);
+        padding: .25em .25em;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__checkbox {
+        height: .7em;
+        width: .7em;
+        border-color: rgb(32, 86, 185);
+        margin: .15em 1.5em .15em .15em;
+    }
+}
+
 
 
 @media (min-width: 600px) {
