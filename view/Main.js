@@ -11,6 +11,7 @@ var userInformation = document.querySelector(".navegationBar__User");
 var gmaps = document.querySelector(".gmaps");
 var gmapsBtn = document.querySelector(".gomap");
 var goToDisease = document.querySelector(".goToDisease");
+
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyBoMBY4QXq_jozUkArf3x1DpDqDmDnJUPM",
@@ -47,13 +48,6 @@ var registerUser = function (event) {
 
 //Aqui empiezan las interacciones como cambios de pantalla
 
-
-
-var handleGoTomap = function () {
-  document.querySelector(".gmaps").style.display = "block";
-  document.querySelector(".disease").style.display = "none";
-}
-gmapsBtn.addEventListener('click', handleGoTomap);
 
 var handleGoToRegister = function (event) {
   document.querySelector(".landingLogIn").style.display = "none";

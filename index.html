@@ -25,7 +25,7 @@
 <body>
 
   <!--The Gmaps library and key-->
-  <section class="gmaps" style="display: flex;">
+  <section class="gmaps" style="display: none;" data-radius="5">
     <div id="map"></div>
   </section>
 
@@ -80,7 +80,7 @@
     </section>
   </main>
 
-  <main class="initialScreen" style="display: none;">
+  <main class="initialScreen" style="display: flex;">
     <div class="initialScreen__logo">
       <img class="initialScreen__logoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
     </div>
@@ -109,7 +109,7 @@
             más habituales</p>
         </div>
       </a>
-      <div class="initialScreen__clickScreens__item initialScreen__clickScreens__item--large">
+      <div class="initialScreen__clickScreens__item initialScreen__clickScreens__item--large" id="cardAP">
         <img class="initialScreen__clickScreens__item--large--img" src="./Images/homeRutas.jpg" alt="">
         <p class="initialScreen__clickScreens__item--large--title"><strong>Rutas de atención</strong></p>
         <p class="initialScreen__clickScreens__item--large--text">Conoce dónde pueden atender tu enfermedad</p>
@@ -203,91 +203,10 @@
   <script src="./model/Logic.js"></script>
   <script src="./controller/Controller.js"></script>
 
-  <script>
-    function iniciarMap() {
-        var coord = { lat: 3.3416852, lng: -76.5298551 };
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 10,
-            center: coord
-        });
 
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                var pos = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
-                map.setCenter(pos);
-
-                coordenadasArray(map, pos);
-            }, function () {
-                //handleLocationError(true, infoWindow, map.getCenter());
-            });
-        } else {
-            // Browser doesn't support Geolocation
-            //handleLocationError(false, infoWindow, map.getCenter());
-        }
-
-        console.log("Iniciar map");
-
-
-
-
-        /*
-              function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-                infoWindow.setPosition(pos);
-                infoWindow.setContent(browserHasGeolocation ?
-                                      'Error: The Geolocation service failed.' :
-                                      'Error: Your browser doesn\'t support geolocation.');
-                infoWindow.open(map);
-              }
-      
-             this.coordenadasArray(map); 
-          */
-
-
-    }
-
-
-    function coordenadasArray(map, userPos) {
-        var coordenada = [];
-        var lat;
-        var lng;
-        for (let index = 0; index < 87; index++) {
-            var coord = { lat: helpCenterArray[index].Latitud, lng: helpCenterArray[index].Longitud };
-            coordenada[index] = coord;
-            lat = parseFloat(coordenada[index].lat);
-            lng = parseFloat(coordenada[index].lng);
-            console.log(getKilometros(lat, lng, userPos.lat, userPos.lng));
-            if(getKilometros(lat, lng, userPos.lat, userPos.lng)<5){
-                var myLatlng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
-                //console.log(lng);
-    
-                var marker = new google.maps.Marker({
-                    position: { lat: lat, lng: lng },
-                    map: map
-                });
-            }
-            
-            
-        }
-
-
-    }
-
-    function getKilometros (lat1, lon1, lat2, lon2) {
-        var rad = function (x) { return x * Math.PI / 180; }
-        var R = 6378.137; //Radio de la tierra en km
-        var dLat = rad(lat2 - lat1);
-        var dLong = rad(lon2 - lon1);
-        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLong / 2) * Math.sin(dLong / 2);
-        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        var d = R * c;
-        return d.toFixed(3); //Retorna tres decimales
-    }
-  </script>
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+  <script src="./model/Map.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
 

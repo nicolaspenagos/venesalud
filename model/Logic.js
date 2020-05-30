@@ -13,7 +13,7 @@ class Logic {
         this.helpCenterMap = new Map();
         this.idCounter = 1000;
         this.idFamily = 1;
-        this.iniciarMap();
+        //this.iniciarMap();
         //loadDataSet();
 
 
@@ -127,6 +127,7 @@ class Logic {
 
     }
 
+/*
     readFile() {
         var fs = require("fs");
         var text = fs.readFileSync("./myTxt.txt");
@@ -136,6 +137,7 @@ class Logic {
             Console.log(textByLine[i]);
         }
     }
+*/
 
     /* @author Nicolas Penagos
     *  Searchs for a family by given family name
@@ -200,11 +202,12 @@ class Logic {
     /* @author Daniel Martinez
   *  Create and add a HelpCenter
   *  @param HCname
-  */
+  
     addHelpCenter(HCname, def, address) {
         this.helpCenters.push(new HelpCenter(HCname, def, 0, 0, address));
         console.log(this.helpCenters[0].name + " " + this.helpCenters[0].definition);
     }
+    */
 
     /* @author Nicolas Penagos
     *  Search for a specific user in a user array given a nickname
@@ -316,8 +319,8 @@ class Logic {
         // this.helpCenters.push(new HelpCenter("nuevo", "nose", 300, 700, "calle#3")); 
         //this.helpCenters.push(new HelpCenter("otro", "nose", 300, 700, "calle#3")); 
 
-        this.addHelpCenter("eoooooo", "idkBro", "3####");
-        console.log(this.searchHelpCenter("eoooooo").name);
+        //this.addHelpCenter("eoooooo", "idkBro", "3####");
+        //console.log(this.searchHelpCenter("eoooooo").name);
 
         //console.log("*********************************");
         //console.log(this.searchFamily("Penagos").relatives[0].nickname);
@@ -336,7 +339,7 @@ class Logic {
 
         console.log(this.searchAttentionPath("salmonella"));
 
-        this.readFile();
+       // this.readFile();
 
     }
 
