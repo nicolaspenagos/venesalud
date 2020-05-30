@@ -346,7 +346,7 @@ html {
 }
 
 .disease {
-    &info {
+    &__info {
         &__text {
             color: royalblue;
 
@@ -418,6 +418,9 @@ html {
                     font-size: 40px;
                 }
             }
+        }
+        &__symptons{
+            
         }
     }
 }

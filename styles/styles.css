@@ -356,16 +356,16 @@ html {
   display: none;
 }
 
-.diseaseinfo__text {
+.disease__info__text {
   color: royalblue;
 }
 
-.diseaseinfo__text--title {
+.disease__info__text--title {
   font-size: 5em;
   text-align: center;
 }
 
-.diseaseinfo__text--content {
+.disease__info__text--content {
   width: 75%;
   font-size: 2em;
   text-align: center;

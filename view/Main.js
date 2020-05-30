@@ -47,11 +47,7 @@ var registerUser = function (event) {
 
 //Aqui empiezan las interacciones como cambios de pantalla
 
-var handleGoToDisease = function () {
-  document.querySelector(".initialScreen").style.display = "none";
-  document.querySelector(".disease").style.display = "block";
-}
-goToDisease.addEventListener('click', handleGoToDisease);
+
 
 var handleGoTomap = function () {
   document.querySelector(".gmaps").style.display = "block";
@@ -158,3 +154,35 @@ control.test();
 control.logIn();
 
 // Intento de formulario
+
+//Enfermedades contenido
+
+var handleGoToDisease = function () {
+  handleDiseaseScreen(); //toca pasarle el nombre de la enfermedad
+  document.querySelector(".initialScreen").style.display = "none";
+  document.querySelector(".disease").style.display = "block";
+}
+goToDisease.addEventListener('click', handleGoToDisease);
+
+var handleDiseaseScreen = function(disease){
+  var title = "Nombre de la enfermedad";
+  var description = "Descripción general de la enfermedad";
+  var images = [undefined, undefined];
+  var symptoms = [undefined,undefined];
+  var reasons = "Texto de ¿Por qué sucede?";
+  var attentionPaths = undefined;
+  var preventionMethods = "link al video de YouTube"
+
+  //Creo que habria que recorrer el arreglo de las enfermedades y matchear lo que recibe esta función (la enfermedad) con el objeto del arreglo de enfermedades y extraer esa información de dicha enfermedad.
+
+  for (let i = 0; i < diseases.length; i++) {
+    if(disease == diseases[i].nombre){
+      //recibe la info de la enfermedad (la info de arriba)
+    } 
+  }
+    // document.getElementById('replace-me').innerText = someVar
+    document.getElementById('diseaseTitle').innerText = title;
+    document.getElementById('diseaseDescription').innerText = description;
+   
+
+}
