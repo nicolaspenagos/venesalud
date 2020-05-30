@@ -83,7 +83,7 @@
     </section>
   </main>
 
-  <main class="initialScreen" style="display: flex;">
+  <main class="initialScreen" style="display: none;">
     <div class="initialScreen__logo">
       <img class="initialScreen__logoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
     </div>
@@ -129,7 +129,8 @@
     <img src="./Images/logo_solo.png" alt="">
     <div class="disease__info">
       <p class="disease__infotext disease__info__text--title" id="diseaseTitle">Dengue</p>
-      <p class="disease__infotext disease__info__text--content" id="diseaseDescription">Es una infección viral transmitida por la picadura de los
+      <p class="disease__infotext disease__info__text--content" id="diseaseDescription">Es una infección viral
+        transmitida por la picadura de los
         mosquitos hembra del género Aedes, la cual se ha constituido como un problema creciente para la salud pública
         mundial.</p>
     </div>
@@ -139,7 +140,8 @@
     </div>
     <div class="disease__actions">
       <p class="disease__actions__text disease__actions__text--title"><strong>¿Por qué sucede?</strong></p>
-      <p class="disease__actions__text disease__actions__text--content">Este virus se propaga debido a la picadura de los
+      <p class="disease__actions__text disease__actions__text--content">Este virus se propaga debido a la picadura de
+        los
         mosquitos hembra, principalmente de la especie Aedes aegypti.</p>
       <div class="disease__actions__item disease__actions__item--short">
         <div class="disease__actionsitem--short--img">
@@ -157,7 +159,7 @@
     <input type="button" value="Ir al mapa" class="gomap">
   </main>
 
-  <main class="symptomSel" style="display: none;">
+  <main class="symptomSel" style="display: flex;">
     <div class="symptomSel__top">
       <a class="symptomSel__back">
         <img src="./Images/back.png" alt="">
@@ -167,39 +169,8 @@
 
     <h1 class="symptomSel__title">Selecciona tus sintomas</h1>
 
-    <div class="symptomSel__mainform">
-      <label class="symptomSel__label">
-        <input type="radio" class="symptomSel__checkbox" id="">
-        Perdida de cabello
-      </label>
-      <label class="symptomSel__label">
-        <input type="radio" class="symptomSel__checkbox" id="">
-        Hemorragia severa
-      </label>
-      <label class="symptomSel__label">
-        <input type="radio" class="symptomSel__checkbox" id="">
-        Manos sensibles e hinchadas
-      </label>
-      <label class="symptomSel__label">
-        <input type="radio" class="symptomSel__checkbox" id="">
-        Complicaciones en la placenta
-      </label>
-      <label class="symptomSel__label">
-        <input type="radio" class="symptomSel__checkbox" id="">
-        Infecciones respiratorias
-      </label>
-      <label class="symptomSel__label">
-        <input type="radio" class="symptomSel__checkbox" id="">
-        Trastornos digestivos
-      </label>
-      <label class="symptomSel__label">
-        <input type="radio" class="symptomSel__checkbox" id="">
-        Erupciones en manos y pies
-      </label>
-
-      <button class="symptomSel__send">Siguiente</button>
-
-    </div>
+    <div class="symptomSel__mainform"></div>
+    <button class="symptomSel__send">Siguiente</button>
 
   </main>
 

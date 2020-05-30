@@ -164,7 +164,7 @@ var handleGoToDisease = function () {
 }
 goToDisease.addEventListener('click', handleGoToDisease);
 
-var handleDiseaseScreen = function(disease){
+var handleDiseaseScreen = function (disease) {
   var diseasesArray = control.logic.diseases;
   console.log(disease);
   console.log(control);
@@ -172,21 +172,43 @@ var handleDiseaseScreen = function(disease){
   var title;
   var description;
   var images = [undefined, undefined];
-  var symptoms = [undefined,undefined];
+  var symptoms = [undefined, undefined];
   var reasons = "Texto de ¿Por qué sucede?";
   var attentionPaths = undefined;
   var preventionMethods = "link al video de YouTube"
   //Creo que habria que recorrer el arreglo de las enfermedades y matchear lo que recibe esta función (la enfermedad) con el objeto del arreglo de enfermedades y extraer esa información de dicha enfermedad.
 
   for (let i = 0; i < diseasesArray.length; i++) {
-    if(disease == diseasesArray[i].name){
+    if (disease == diseasesArray[i].name) {
       //recibe la info de la enfermedad (la info de arriba)
       title = diseasesArray[i].name;
       description = diseasesArray[i].definition;
-    } 
+    }
   }
-    // document.getElementById('replace-me').innerText = someVar
-    document.getElementById('diseaseTitle').innerText = title;
-    document.getElementById('diseaseDescription').innerText = description;
-    
+  // document.getElementById('replace-me').innerText = someVar
+  document.getElementById('diseaseTitle').innerText = title;
+  document.getElementById('diseaseDescription').innerText = description;
+
 }
+
+
+
+
+var diseases = control.logic.diseases;
+var parent = document.querySelector('.symptomSel__mainform');
+diseases.forEach(function (disease) {
+  var label = document.createElement('label');
+  label.classList.add('symptomSel__label');
+
+  label.innerHTML = `
+    <input type="radio" class="symptomSel__checkbox" id="" data-sym="${disease.methaSymptom}">
+    <span>${disease.methaSymptom}</span>
+  `;
+
+  // crear padre de la sub lista (disease.symptoms)
+  // iterar sub lista y crear cada label
+  // añadir sub label a sub div
+  // añadir sub div al parent después del label
+
+  parent.appendChild(label);
+});
