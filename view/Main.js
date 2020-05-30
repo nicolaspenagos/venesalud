@@ -158,31 +158,35 @@ control.logIn();
 //Enfermedades contenido
 
 var handleGoToDisease = function () {
-  handleDiseaseScreen(); //toca pasarle el nombre de la enfermedad
+  handleDiseaseScreen("Dengue"); //toca pasarle el nombre de la enfermedad
   document.querySelector(".initialScreen").style.display = "none";
   document.querySelector(".disease").style.display = "block";
 }
 goToDisease.addEventListener('click', handleGoToDisease);
 
 var handleDiseaseScreen = function(disease){
-  var title = "Nombre de la enfermedad";
-  var description = "Descripción general de la enfermedad";
+  var diseasesArray = control.logic.diseases;
+  console.log(disease);
+  console.log(control);
+  console.log(diseasesArray);
+  var title;
+  var description;
   var images = [undefined, undefined];
   var symptoms = [undefined,undefined];
   var reasons = "Texto de ¿Por qué sucede?";
   var attentionPaths = undefined;
   var preventionMethods = "link al video de YouTube"
-
   //Creo que habria que recorrer el arreglo de las enfermedades y matchear lo que recibe esta función (la enfermedad) con el objeto del arreglo de enfermedades y extraer esa información de dicha enfermedad.
 
-  for (let i = 0; i < diseases.length; i++) {
-    if(disease == diseases[i].nombre){
+  for (let i = 0; i < diseasesArray.length; i++) {
+    if(disease == diseasesArray[i].name){
       //recibe la info de la enfermedad (la info de arriba)
+      title = diseasesArray[i].name;
+      description = diseasesArray[i].definition;
     } 
   }
     // document.getElementById('replace-me').innerText = someVar
     document.getElementById('diseaseTitle').innerText = title;
     document.getElementById('diseaseDescription').innerText = description;
-   
-
+    
 }

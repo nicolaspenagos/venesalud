@@ -15,7 +15,8 @@ class Logic{
         this.idCounter = 1000;
         this.idFamily = 1;
         this.iniciarMap();
-        //loadDataSet();
+        this.loadLocalData();
+        //¿loadDataSet();
 
 
 
