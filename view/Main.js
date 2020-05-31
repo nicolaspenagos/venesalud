@@ -240,78 +240,10 @@ diseases.forEach(function (disease) {
   }
 
 
-  
-
  
   // crear padre de la sub lista (disease.symptoms)
   // iterar sub lista y crear cada label
   // añadir sub label a sub div
-  // añadir sub div al parent después del label
-
-  
-
-  parent.appendChild(label);
-  parent.appendChild(subParent);
-});
-
-
-document.querySelectorAll('.symptomSel__checkbox').forEach(item => {
-  item.addEventListener('click', event => {
-    var methaSymp = item.dataset.sym;
-    console.log(methaSymp);
-    // cambiar el display a flex
-  });
- 
-});
-
-
-
-
-//Enfermedades contenido
-  // añadir sub div al parent después del label
-
-  
-
-  parent.appendChild(label);
-  parent.appendChild(subParent);
-});
-
-
-document.querySelectorAll('.symptomSel__checkbox').forEach(item => {
-  item.addEventListener('click', event => {
-    var methaSymp = item.dataset.sym;
-    console.log(methaSymp);
-    // cambiar el display a flex
-  });
- 
-});
-
-
-
-
-//Enfermedades contenido
-  // añadir sub div al parent después del label
-
-  
-
-  parent.appendChild(label);
-  parent.appendChild(subParent);
-});
-
-
-document.querySelectorAll('.symptomSel__checkbox').forEach(item => {
-  item.addEventListener('click', event => {
-    var methaSymp = item.dataset.sym;
-    console.log(methaSymp);
-    // cambiar el display a flex
-  });
- 
-});
-
-
-
-
-//Enfermedades contenido
   // añadir sub div al parent después del label
 
   
