@@ -194,10 +194,19 @@ diseases.forEach(function (disease) {
   var label = document.createElement('label');
   label.classList.add('symptomSel__label');
 
+  console.log('hola desde si entro?');
   label.innerHTML = `
     <input type="radio" class="symptomSel__checkbox" id="" data-sym="${disease.methaSymptom}">
     <span>${disease.methaSymptom}</span>
   `;
+
+  var subParent = document.createElement('div');
+  subParent.classList.add('symptomSel__mainform');
+  subParent.classList.add('symptomSel__mainform--sub');
+
+
+  var sub = document.createElement('label');
+  sub.classList.add('symptomSel__label');
 
   // crear padre de la sub lista (disease.symptoms)
   // iterar sub lista y crear cada label

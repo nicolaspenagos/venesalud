@@ -419,9 +419,8 @@ html {
                 }
             }
         }
-        &__symptons{
-            
-        }
+
+        &__symptons {}
     }
 }
 
@@ -463,7 +462,7 @@ html {
     }
 
     &__label {
-        font-size: 2.7em;
+        font-size: 2.5em;
         margin: 1em auto;
         width: 80%;
         background-color: #fff;
@@ -473,6 +472,8 @@ html {
         display: flex;
         flex-direction: row;
         align-items: center;
+
+
     }
 
     &__checkbox {
