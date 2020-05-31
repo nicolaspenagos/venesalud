@@ -25,7 +25,7 @@
 <body>
 
   <!--The Gmaps library and key-->
-  <section class="gmaps" style="display: none;" data-radius="5">
+  <section class="gmaps" style="display: none;" data-radius="3">
     <div id="map"></div>
   </section>
 
@@ -80,7 +80,7 @@
     </section>
   </main>
 
-  <main class="initialScreen" style="display: flex;">
+  <main class="initialScreen" style="display: none;">
     <div class="initialScreen__logo">
       <img class="initialScreen__logoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
     </div>
@@ -91,14 +91,16 @@
         <p class="initialScreen__clickScreens__item--large--text">Ver la más reciente campaña de prevención en tendencia
           esta semana</p>
       </div>
-      <div class="initialScreen__clickScreens__item initialScreen__clickScreens__item--short">
-        <div class="initialScreen__clickScreens__item--short--img">
-          <img class="initialScreen__clickScreens__item--short--imgJpg" src="./Images/Home-Buscador.png" alt="">
+      <a class="goToForm">
+        <div class="initialScreen__clickScreens__item initialScreen__clickScreens__item--short">
+          <div class="initialScreen__clickScreens__item--short--img">
+            <img class="initialScreen__clickScreens__item--short--imgJpg" src="./Images/Home-Buscador.png" alt="">
+          </div>
+          <p class="initialScreen__clickScreens__item--short--title"><strong>Buscador de sintomas</strong></p>
+          <p class="initialScreen__clickScreens__item--short--text">Resuelve un formulario que nos ayudará a entender que
+            es lo que estás padeciendo</p>
         </div>
-        <p class="initialScreen__clickScreens__item--short--title"><strong>Buscador de sintomas</strong></p>
-        <p class="initialScreen__clickScreens__item--short--text">Resuelve un formulario que nos ayudará a entender que
-          es lo que estás padeciendo</p>
-      </div>
+      </a>
       <a class="goToDisease">
         <div class="initialScreen__clickScreens__item initialScreen__clickScreens__item--short">
           <div class="initialScreen__clickScreens__item--short--img">
@@ -115,6 +117,7 @@
         <p class="initialScreen__clickScreens__item--large--text">Conoce dónde pueden atender tu enfermedad</p>
       </div>
     </section>
+    <div class="whiteSpace"></div>
   </main>
 
 
@@ -122,7 +125,7 @@
     <main>
       <h1>¿Cuales son tus sintomas?</h1>
     </main>
-    <img src="./Images/back.png" alt="">
+    <img src="./Images/back.png" alt="" class="disease__back">
     <img src="./Images/logo_solo.png" alt="">
     <div class="disease__info">
       <p class="disease__infotext disease__info__text--title" id="diseaseTitle"></p>
@@ -155,10 +158,10 @@
         </div>
       </a>
     </div>
-    <input type="button" value="Ir al mapa" class="gomap">
+    <div class="whiteSpace"></div>
   </main>
 
-  <main class="symptomSel" style="display: none;">
+  <main class="symptomSel" style="display: flex;">
     <div class="symptomSel__top">
       <a class="symptomSel__back">
         <img src="./Images/back.png" alt="">
@@ -170,7 +173,7 @@
 
     <div class="symptomSel__mainform"></div>
     <button class="symptomSel__send">Siguiente</button>
-
+    <div class="whiteSpace"></div>
   </main>
 
   <nav class="navegationBar" style="display: flex;">
@@ -180,18 +183,24 @@
         <img class="navegationBar__image navegationBar__Home--Off" src="" alt="">
       </section>
     </a>
-    <section class="navegationBar__Search">
-      <img class="navegationBar__image navegationBar__Search--On" src="./Images/Home-Buscador.png" alt="">
-      <img class="navegationBar__image navegationBar__Search--Off" src="" alt="">
-    </section>
-    <section class="navegationBar__Diseases">
-      <img class="navegationBar__image navegationBar__Diseases--On" src="./Images/Icono-virus Off.png" alt="">
-      <img class="navegationBar__image navegationBar__Diseases--Off" src="" alt="">
-    </section>
-    <section class="navegationBar__User">
-      <img class="navegationBar__image navegationBar__User--On" src="./Images/Icono-User.png" alt="">
-      <img class="navegationBar__image navegationBar__User--Off" src="./Images/Icono-usuario-blanco Off.png" alt="">
-    </section>
+    <a class="navegationBar__SearchBtn">
+      <section class="navegationBar__Search">
+        <img class="navegationBar__image navegationBar__Search--On" src="./Images/Home-Buscador.png" alt="">
+        <img class="navegationBar__image navegationBar__Search--Off" src="" alt="">
+      </section>
+    </a>
+    <a class="navegationBar__DiseasesBtn">
+      <section class="navegationBar__Diseases">
+        <img class="navegationBar__image navegationBar__Diseases--On" src="./Images/Icono-virus Off.png" alt="">
+        <img class="navegationBar__image navegationBar__Diseases--Off" src="" alt="">
+      </section>
+    </a>
+    <a class="navegationBar__UserBtn">
+      <section class="navegationBar__User">
+        <img class="navegationBar__image navegationBar__User--On" src="./Images/Icono-User.png" alt="">
+        <img class="navegationBar__image navegationBar__User--Off" src="./Images/Icono-usuario-blanco Off.png" alt="">
+      </section>
+    </a>
   </nav>
 
   <script src="./data/helpCenterData.js"></script>
@@ -218,6 +227,7 @@
   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
   <script src="./view/Main.js"></script>
+
 
 
   <script>

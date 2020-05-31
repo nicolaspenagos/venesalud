@@ -13,8 +13,10 @@ class Logic {
         this.helpCenterMap = new Map();
         this.idCounter = 1000;
         this.idFamily = 1;
+        
         //this.iniciarMap();
         //loadDataSet();
+       // const myTable =  new HashTable(); 
 
 
     }
@@ -58,7 +60,7 @@ class Logic {
         this.diseases.push(new Disease("Sarampión", "Es una enfermedad sumamente contagiosa causada por un virus. Clínicamente se diferencian dos etapas en la enfermedad, la primera, es la fase en la que se dan síntomas previos al desarrollo de la enfermedad y la segunda fase, llamada eruptiva, es la fase en la que salen las erupciones en la piel.", "Erupción con manchas rojas", s6));
 
         var s7 = ["Comezón generalizada", " Pérdida del apetito", "Fiebre", "Cansancio", "Malestar general"];
-        this.diseases.push(new Disease("Varicela", "Es una infección viral altamente contagiosa que provoca un sarpullido similar a las ampollas en la piel y que da comezón.", "Erupción de bultos rojos o rosados", "Erupción de bultos rojos o rosados,", s7));
+        this.diseases.push(new Disease("Varicela", "Es una infección viral altamente contagiosa que provoca un sarpullido similar a las ampollas en la piel y que da comezón.", "Erupción de bultos rojos o rosados", s7));
 
         var s8 = ["Fatiga", "Fiebre", "Rinitis y estornudos", "Dificultades respiratorias", " Hemorragias", "Ataque intenso de tos", "Episodios de ausencia de respiración", "Ojos llorosos", "Vómito"];
         this.diseases.push(new Disease("Tosferina", "Es una infección respiratoria altamente contagiosa, se caracteriza por ser una tos seca fuerte e incontrolable, seguida de unos sonidos agudos al inhalar, dificulta la respiración, además es altamente mortal en bebés, y tiene una gran probabilidad de causar daños cerebrales.", "Tos intensa con sonido agudo al inhalar", s8));
@@ -331,30 +333,85 @@ class Logic {
         this.addAttentionpath("hospital 3", testDiseases1);
 
         console.log(this.searchAttentionPath("salmonella"));
-        console.log(); 
+        
        // this.readFile();
+       this.diseases.forEach(element => {
+        console.log(element.methaSymptom+"-------------------------");
+
+      //  myTable.setItem(element.methaSymptom,element.name); 
+    });
+}
+
+   
+
+ 
+
+
+    setItem = (key,value)=>{
 
     }
 
-    /* @author Wilson St Suarez
-  *  Create the map and marker, also, set the position to the center of the map.
-  *  @param 
-  *  @return 
-  */
 
-
-
-
-    //This go in the style.css class, use it when the frontend team has the space for it inthe the proper screen
-    /*
-    
-   
-
-*/
-matchDiseases(dis){
-
+    getItem = (key)=>{
+        return ''
+    }
 
 
 }
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

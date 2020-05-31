@@ -15,6 +15,16 @@ function iniciarMap() {
                 lng: position.coords.longitude
             };
 
+            var marker = new google.maps.Marker({
+
+                position: { lat: position.coords.latitude, lng: position.coords.longitude },
+                map: map,
+                icon: {
+                    url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+               }
+
+            });
+
             map.setCenter(pos);
             coordenadasArray(map, pos);
             
@@ -74,7 +84,10 @@ function coordenadasArray(map, userPos) {
 
                 position: { lat: lat, lng: lng },
                 map: map,
-                title: helpCenterArray[index].name
+                title: helpCenterArray[index].name,
+                icon: {
+                    url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+               }
 
             });
 
@@ -156,7 +169,7 @@ var gmapsBtn = document.querySelector(".gomap");
 
 var goMap2 = function () {
     document.querySelector(".gmaps").style.display = "block";
-    document.querySelector(".gmaps").dataset.radius = '5';
+    document.querySelector(".gmaps").dataset.radius = '3';
     reloadMarkers();
     document.querySelector(".disease").style.display = "none";
 }

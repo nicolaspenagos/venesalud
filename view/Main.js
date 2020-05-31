@@ -48,6 +48,14 @@ var registerUser = function (event) {
 
 //Aqui empiezan las interacciones como cambios de pantalla
 
+// codigo base: document.querySelector("").addEventListener('click', function(){}); 
+
+document.querySelector(".symptomSel__back").addEventListener('click', function(){
+  handleGoToMain();
+});
+document.querySelector(".disease__back").addEventListener('click', function(){
+  handleGoToMain();
+});
 
 var handleGoToRegister = function (event) {
   document.querySelector(".landingLogIn").style.display = "none";
@@ -104,19 +112,19 @@ var getUpdates = function (username, deep) {
 
       if (deep) {
         // usuario principal
-        setMainUser(myData)
+        //setMainUser(myData)
       } else {
         // parte de la familia
-        addToFamily(myData)
+        //addToFamily(myData)
       }
 
-      console.log(myData.familyMembers)
+      //console.log(myData.familyMembers)
       if (deep && myData.familyMembers && myData.familyMembers.length) {
         myData.familyMembers.forEach(function (member) {
           getUpdates(member);
         })
       }
-      console.log("El nickname del usuario es: " + theNickname + ", tiene " + theAge + " años, es " + theSex + " y su ID es: " + theId);
+      //console.log("El nickname del usuario es: " + theNickname + ", tiene " + theAge + " años, es " + theSex + " y su ID es: " + theId);
     }
   });
 }
@@ -130,8 +138,32 @@ var handleGoToMain = function () {
   document.querySelector(".initialScreen").style.display = "flex";
   document.querySelector(".disease").style.display = "none";
   document.querySelector(".gmaps").style.display = "none";
+  document.querySelector(".symptomSel").style.display = "none";
 }
-logInBtn.addEventListener('click', handleSendInfoLogin);
+
+var handleGoToDisease = function () {
+  handleDiseaseScreen("Dengue"); //toca pasarle el nombre de la enfermedad
+  document.querySelector(".landingLogIn").style.display = "none";
+  document.querySelector(".landingRegister").style.display = "none";
+  document.querySelector(".navegationBar").style.display = "flex";
+  document.querySelector(".initialScreen").style.display = "none";
+  document.querySelector(".disease").style.display = "block";
+  document.querySelector(".gmaps").style.display = "none";
+  document.querySelector(".symptomSel").style.display = "none";
+}
+goToDisease.addEventListener('click', handleGoToDisease);
+
+var handleGoToForm = function() {
+  document.querySelector(".landingLogIn").style.display = "none";
+  document.querySelector(".landingRegister").style.display = "none";
+  document.querySelector(".navegationBar").style.display = "flex";
+  document.querySelector(".initialScreen").style.display = "none";
+  document.querySelector(".disease").style.display = "none";
+  document.querySelector(".gmaps").style.display = "none";
+  document.querySelector(".symptomSel").style.display = "flex";
+}
+document.querySelector(".goToForm").addEventListener('click', handleGoToForm);
+
 registerBtn.addEventListener('click', registerUser);
 document.querySelector(".navegationBar__HomeBtn").addEventListener('click', handleGoToMain);
 
@@ -141,12 +173,29 @@ var handleNavegationBarUser = function () {
 }
 userInformation.addEventListener('click', handleNavegationBarUser);
 
+//Barra de navegación
+
+logInBtn.addEventListener('click', handleSendInfoLogin);
+
+document.querySelector(".navegationBar__SearchBtn").addEventListener('click', function(){
+  handleGoToForm();
+});
+
+document.querySelector(".navegationBar__DiseasesBtn").addEventListener('click', function(){
+  handleGoToDisease();
+});
+
+/*document.querySelector(".navegationBar__UserBtn").addEventListener('click', function(){
+  handleGoToUser();
+});*/
+
 //loginBtn.addEventListener('click', registerUser);
 
 let control = new Controller();
 control.test();
 control.logIn();
 
+console.log("deberia poder seguir");
 // Intento de formulario
 
 var diseases = control.logic.diseases;
@@ -154,37 +203,137 @@ var parent = document.querySelector('.symptomSel__mainform');
 diseases.forEach(function (disease) {
   var label = document.createElement('label');
   label.classList.add('symptomSel__label');
-
-  console.log('hola desde si entro?');
   label.innerHTML = `
     <input type="radio" class="symptomSel__checkbox" id="" data-sym="${disease.methaSymptom}">
     <span>${disease.methaSymptom}</span>
   `;
+  
 
   var subParent = document.createElement('div');
   subParent.classList.add('symptomSel__mainform');
   subParent.classList.add('symptomSel__mainform--sub');
 
+  /*
+  diseases.forEach(function (symptoms){
+    var sub = document.createElement('label');
+    sub.classList.add('symptomSel__label');
+    sub.innerHTML = `
+    <input type="radio" class="symptomSel__checkbox" id="" data-sym="${disease.symptoms}">
+    <span>${disease.symptoms}</span>
+  `;
 
-  var sub = document.createElement('label');
-  sub.classList.add('symptomSel__label');
+  subParent.appendChild(sub);
+  });
+  */
 
+  for (let i = 0; i < disease.symptoms.length; i++) {
+    var sub = document.createElement('label');
+    sub.classList.add('symptomSel__label');
+    sub.classList.add('symptomSel__label--sub');
+    sub.innerHTML = `
+    <input type="radio" class="symptomSel__checkbox"  id="" data-sym="${disease.symptoms[i]}">
+    <span>${disease.symptoms[i]}</span>
+  `;
+
+    subParent.appendChild(sub);
+    
+  }
+
+
+  
+
+ 
   // crear padre de la sub lista (disease.symptoms)
   // iterar sub lista y crear cada label
   // añadir sub label a sub div
   // añadir sub div al parent después del label
 
+  
+
   parent.appendChild(label);
+  parent.appendChild(subParent);
 });
 
-//Enfermedades contenido
 
-var handleGoToDisease = function () {
-  handleDiseaseScreen("Dengue"); //toca pasarle el nombre de la enfermedad
-  document.querySelector(".initialScreen").style.display = "none";
-  document.querySelector(".disease").style.display = "block";
-}
-goToDisease.addEventListener('click', handleGoToDisease);
+document.querySelectorAll('.symptomSel__checkbox').forEach(item => {
+  item.addEventListener('click', event => {
+    var methaSymp = item.dataset.sym;
+    console.log(methaSymp);
+    // cambiar el display a flex
+  });
+ 
+});
+
+
+
+
+//Enfermedades contenido
+  // añadir sub div al parent después del label
+
+  
+
+  parent.appendChild(label);
+  parent.appendChild(subParent);
+});
+
+
+document.querySelectorAll('.symptomSel__checkbox').forEach(item => {
+  item.addEventListener('click', event => {
+    var methaSymp = item.dataset.sym;
+    console.log(methaSymp);
+    // cambiar el display a flex
+  });
+ 
+});
+
+
+
+
+//Enfermedades contenido
+  // añadir sub div al parent después del label
+
+  
+
+  parent.appendChild(label);
+  parent.appendChild(subParent);
+});
+
+
+document.querySelectorAll('.symptomSel__checkbox').forEach(item => {
+  item.addEventListener('click', event => {
+    var methaSymp = item.dataset.sym;
+    console.log(methaSymp);
+    // cambiar el display a flex
+  });
+ 
+});
+
+
+
+
+//Enfermedades contenido
+  // añadir sub div al parent después del label
+
+  
+
+  parent.appendChild(label);
+  parent.appendChild(subParent);
+});
+
+
+document.querySelectorAll('.symptomSel__checkbox').forEach(item => {
+  item.addEventListener('click', event => {
+    var methaSymp = item.dataset.sym;
+    console.log(methaSymp);
+    // cambiar el display a flex
+  });
+ 
+});
+
+
+
+
+//Enfermedades contenido
 
 var handleDiseaseScreen = function (disease) {
   var diseasesArray = control.logic.diseases;
@@ -212,7 +361,6 @@ var handleDiseaseScreen = function (disease) {
   document.getElementById('diseaseDescription').innerText = description;
 }
 document.getElementById('goToYouTubeVideo').addEventListener('click', function(){
-  console.log("Deberia ir al video :c");
   window.open('https://www.youtube.com/watch?v=9Js1CbQFUwg');
 });
 

@@ -8,7 +8,7 @@ html {
 
 
 #map {
-    height: 800px;
+    height: 1500px;
     width: 100%;
 }
 
@@ -472,6 +472,10 @@ html {
         display: flex;
         flex-direction: row;
         align-items: center;
+
+        &--sub{
+            background-color: cornsilk;
+        }
 
 
     }
