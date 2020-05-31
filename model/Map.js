@@ -4,7 +4,7 @@ var map;
 function iniciarMap() {
     var coord = { lat: 3.3416852, lng: -76.5298551 };
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 10,
+        zoom: 15,
         center: coord
     });
 
@@ -16,8 +16,9 @@ function iniciarMap() {
             };
 
             map.setCenter(pos);
-
             coordenadasArray(map, pos);
+            
+
         }, function () {
             //handleLocationError(true, infoWindow, map.getCenter());
         });
@@ -49,6 +50,7 @@ function iniciarMap() {
 }
 
 var markers =[];
+var infoWindows=[];
 var radius = parseInt(document.querySelector(".gmaps").getAttribute("data-radius"));
 
 
@@ -69,11 +71,39 @@ function coordenadasArray(map, userPos) {
             var myLatlng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
             //console.log(lng);
             var marker = new google.maps.Marker({
+
                 position: { lat: lat, lng: lng },
-                map: map
+                map: map,
+                title: helpCenterArray[index].name
+
             });
 
+            var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">'+helpCenterArray[index].Nombre+'</h1>'+
+            '<div id="bodyContent">'+
+            '<p>'+helpCenterArray[index].Dirección+'</p>'+
+            '<p>'+helpCenterArray[index].Teléfono+'</p>'+
+            '</div>'+
+            '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+              });
+
             markers.push(marker);
+
+            infoWindows.push(infowindow);
+
+            for(let i=0; i<markers.length; i++){
+            markers[i].addListener('click', function() {
+                infoWindows[i].open(map,markers[i]);
+    
+            });
+
+            }
+
         }
 
     }
@@ -89,6 +119,7 @@ function reloadMarkers() {
     
     // Reset the markers array
     markers = [];
+    infoWindows =[];
     radius = parseInt(document.querySelector(".gmaps").getAttribute("data-radius"));
     
     // Call set markers to re-add markers
@@ -123,12 +154,12 @@ cardAP.onclick = function goMap(){
 var gmapsBtn = document.querySelector(".gomap");
 
 
-var handleGoTomap = function () {
+var goMap2 = function () {
     document.querySelector(".gmaps").style.display = "block";
     document.querySelector(".gmaps").dataset.radius = '5';
     reloadMarkers();
     document.querySelector(".disease").style.display = "none";
-  }
+}
   
   
-gmapsBtn.addEventListener('click', handleGoTomap);
+document.getElementById('goToMapFromDisease').addEventListener('click', goMap2)

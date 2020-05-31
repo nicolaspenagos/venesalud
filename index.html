@@ -50,7 +50,7 @@
     <button type="button" class="login-btn">LOGIN</button>
 </div>
 -->
-  <main class="landingLogIn" style="display: flex;">
+  <main class="landingLogIn" style="display: none;">
     <div class="landingLogIn__Logo">
       <img class="landingLogIn__LogoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
     </div>
@@ -80,7 +80,7 @@
     </section>
   </main>
 
-  <main class="initialScreen" style="display: none;">
+  <main class="initialScreen" style="display: flex;">
     <div class="initialScreen__logo">
       <img class="initialScreen__logoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
     </div>
@@ -125,10 +125,9 @@
     <img src="./Images/back.png" alt="">
     <img src="./Images/logo_solo.png" alt="">
     <div class="disease__info">
-      <p class="disease__infotext disease__info__text--title" id="diseaseTitle">Dengue</p>
+      <p class="disease__infotext disease__info__text--title" id="diseaseTitle"></p>
       <p class="disease__infotext disease__info__text--content" id="diseaseDescription">Es una infección viral
-        transmitida por la picadura de los
-        mosquitos hembra del género Aedes, la cual se ha constituido como un problema creciente para la salud pública
+        transmitida por la picadura de los mosquitos hembra del género Aedes, la cual se ha constituido como un problema creciente para la salud pública
         mundial.</p>
     </div>
     <div class="disease__symptoms">
@@ -138,20 +137,23 @@
     <div class="disease__actions">
       <p class="disease__actions__text disease__actions__text--title"><strong>¿Por qué sucede?</strong></p>
       <p class="disease__actions__text disease__actions__text--content">Este virus se propaga debido a la picadura de
-        los
-        mosquitos hembra, principalmente de la especie Aedes aegypti.</p>
-      <div class="disease__actions__item disease__actions__item--short">
-        <div class="disease__actionsitem--short--img">
-          <img class="disease__actionsitem--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+        los mosquitos hembra, principalmente de la especie Aedes aegypti.</p>
+      <a id="goToMapFromDisease">
+        <div class="disease__actions__item disease__actions__item--short">
+          <div class="disease__actions__item--short--img">
+            <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+          </div>
+          <p class="disease__actions__item--short--title">Ver en el mapa</p>
         </div>
-        <p class="disease__actions__item--short--title">Ver en el mapa</p>
-      </div>
-      <div class="disease__actions__item disease__actions__item--short">
-        <div class="disease__actions__item--short--img">
-          <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+      </a>
+      <a id="goToYouTubeVideo">
+        <div class="disease__actions__item disease__actions__item--short">
+          <div class="disease__actions__item--short--img">
+            <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+          </div>
+          <p class="diseaseactions__item--short--title">Ver video</p>
         </div>
-        <p class="diseaseactions__item--short--title">Ver video</p>
-      </div>
+      </a>
     </div>
     <input type="button" value="Ir al mapa" class="gomap">
   </main>
@@ -171,7 +173,7 @@
 
   </main>
 
-  <nav class="navegationBar" style="display: none;">
+  <nav class="navegationBar" style="display: flex;">
     <a class="navegationBar__HomeBtn">
       <section class="navegationBar__Home">
         <img class="navegationBar__image navegationBar__Home--On" src="./Images/Icono-home Off.png" alt="">

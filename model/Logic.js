@@ -293,6 +293,7 @@ class Logic {
 
 
     test() {
+        this.loadLocalData(); 
         // this.family = new Family("firstFamily"); 
         //   this.family.addRelative(1, "nick",14, "male"); 
         //console.log(this.family.relatives[0].sex); 
@@ -304,15 +305,12 @@ class Logic {
         this.addUser("daniel", 14, "male");
 
 
-        //console.log(this.searchUser("nicolas").id);
-
-        //console.log("*********************************");
+       
 
         this.addFamily("Penagos");
         this.addFamily("Suarez");
         this.addFamily("Martinez");
-        // console.log("searchFamily(Suarez): "+this.searchFamily("Suarez").familyName+" "+this.searchFamily("Suarez").id);
-        //console.log(this.searchUser("nicolas").nickname+" xxxxx "+ this.searchFamily("Penagos").familyName);
+      
         this.addRelative("nicolas", "Penagos");
         this.addRelative("nick", "Penagos");
 
@@ -320,13 +318,8 @@ class Logic {
         //this.helpCenters.push(new HelpCenter("otro", "nose", 300, 700, "calle#3")); 
 
         //this.addHelpCenter("eoooooo", "idkBro", "3####");
-        //console.log(this.searchHelpCenter("eoooooo").name);
 
-        //console.log("*********************************");
-        //console.log(this.searchFamily("Penagos").relatives[0].nickname);
-        //console.log(this.searchFamily("Penagos").relatives[1].nickname);
-
-        console.log("*********************************");
+        console.log(this.diseases[0]+"aaaaaaaaaaaaaaaaa");
 
         var testDiseases1 = ["salmonella", "malaria"];
         var testDiseases2 = ["sifilis Congenita", "sifilis gestional"];
@@ -338,7 +331,7 @@ class Logic {
         this.addAttentionpath("hospital 3", testDiseases1);
 
         console.log(this.searchAttentionPath("salmonella"));
-
+        console.log(); 
        // this.readFile();
 
     }
@@ -358,5 +351,10 @@ class Logic {
    
 
 */
+matchDiseases(dis){
+
+
+
+}
 
 }
