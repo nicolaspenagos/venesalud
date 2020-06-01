@@ -13,7 +13,6 @@ html {
 }
 
 
-
 .landingRegister {
 
     display: none;
@@ -420,7 +419,6 @@ html {
             }
         }
 
-        &__symptons {}
     }
 }
 
@@ -473,7 +471,7 @@ html {
         flex-direction: row;
         align-items: center;
 
-        &--sub{
+        &--sub {
             background-color: cornsilk;
         }
 
@@ -481,6 +479,14 @@ html {
     }
 
     &__checkbox {
+        height: .7em;
+        width: .7em;
+        border-color: rgb(32, 86, 185);
+        margin: .15em 1.5em .15em .15em;
+
+    }
+
+    &__nocheck {
         height: .7em;
         width: .7em;
         border-color: rgb(32, 86, 185);
@@ -495,9 +501,101 @@ html {
         margin: .5em auto;
         border-radius: 25px;
         padding: .5em 0;
+
+        margin-bottom: 25%;
     }
 }
 
+
+.diseaseSel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+
+    &__top {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    &__back {
+        position: absolute;
+        left: 5%;
+        top: 3%;
+    }
+
+    &__logo {
+        margin: 3% auto 5px;
+        width: 90px;
+    }
+
+    &__title {
+        text-align: center;
+        margin: 1em auto;
+        font-size: 4em;
+        width: 40%;
+        color: #2C74F9;
+    }
+
+    &__mainform {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__label {
+        font-size: 2.5em;
+        margin: 1em auto;
+        width: 80%;
+        background-color: #fff;
+        color: rgb(32, 86, 185);
+        padding: .25em .25em;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: fit-content;
+        padding: 1em;
+
+        &--sub {
+            background-color: cornsilk;
+        }
+
+        &__checkbox {
+            height: .7em;
+            width: .7em;
+            border-color: rgb(32, 86, 185);
+            margin: .15em 1.5em .15em .15em;
+            width: 100%;
+            padding: 3px;
+        }
+
+        &__nocheck {
+            height: .7em;
+            width: .7em;
+            border-color: rgb(32, 86, 185);
+            margin: .15em 1.5em .15em .15em;
+        }
+
+        &__send {
+            font-size: 3em;
+            background-color: rgb(32, 86, 185);
+            color: #fff;
+            width: 80%;
+            margin: .5em auto;
+            border-radius: 25px;
+            padding: .5em 0;
+
+            margin-bottom: 25%;
+        }
+    }
+}
+
+.whiteSpace {
+    width: 100%;
+    height: 180px;
+}
 
 
 @media (min-width: 600px) {

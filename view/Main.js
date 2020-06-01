@@ -11,6 +11,8 @@ var userInformation = document.querySelector(".navegationBar__User");
 var gmaps = document.querySelector(".gmaps");
 var gmapsBtn = document.querySelector(".gomap");
 var goToDisease = document.querySelector(".goToDisease");
+var methaSymp;
+var diseaseName;
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -31,6 +33,8 @@ var getInfo = function () {
   console.log("al cargar el body sale esto");
 }
 
+let control = new Controller();
+
 var registerUser = function (event) {
   inputPass = document.querySelector(".landingRegister__input--password");
   inputMail = document.querySelector(".landingRegister__input--mail");
@@ -50,10 +54,10 @@ var registerUser = function (event) {
 
 // codigo base: document.querySelector("").addEventListener('click', function(){}); 
 
-document.querySelector(".symptomSel__back").addEventListener('click', function(){
+document.querySelector(".symptomSel__back").addEventListener('click', function () {
   handleGoToMain();
 });
-document.querySelector(".disease__back").addEventListener('click', function(){
+document.querySelector(".disease__back").addEventListener('click', function () {
   handleGoToMain();
 });
 
@@ -139,10 +143,24 @@ var handleGoToMain = function () {
   document.querySelector(".disease").style.display = "none";
   document.querySelector(".gmaps").style.display = "none";
   document.querySelector(".symptomSel").style.display = "none";
+  document.querySelector(".diseaseSel").style.display = "none";
 }
 
+var handleGoToDiseaseSel = function () {
+  //toca pasarle el nombre de la enfermedad 
+  document.querySelector(".landingLogIn").style.display = "none";
+  document.querySelector(".landingRegister").style.display = "none";
+  document.querySelector(".navegationBar").style.display = "flex";
+  document.querySelector(".initialScreen").style.display = "none";
+  document.querySelector(".disease").style.display = "none";
+  document.querySelector(".gmaps").style.display = "none";
+  document.querySelector(".symptomSel").style.display = "none";
+  document.querySelector(".diseaseSel").style.display = "flex";
+}
+goToDisease.addEventListener('click', handleGoToDiseaseSel);
+
 var handleGoToDisease = function () {
-  handleDiseaseScreen("Dengue"); //toca pasarle el nombre de la enfermedad
+  //toca pasarle el nombre de la enfermedad 
   document.querySelector(".landingLogIn").style.display = "none";
   document.querySelector(".landingRegister").style.display = "none";
   document.querySelector(".navegationBar").style.display = "flex";
@@ -150,10 +168,11 @@ var handleGoToDisease = function () {
   document.querySelector(".disease").style.display = "block";
   document.querySelector(".gmaps").style.display = "none";
   document.querySelector(".symptomSel").style.display = "none";
+  document.querySelector(".diseaseSel").style.display = "none";
 }
-goToDisease.addEventListener('click', handleGoToDisease);
+//document.querySelector(".diseaseSel__label").addEventListener('click', handleGoToDisease);
 
-var handleGoToForm = function() {
+var handleGoToForm = function () {
   document.querySelector(".landingLogIn").style.display = "none";
   document.querySelector(".landingRegister").style.display = "none";
   document.querySelector(".navegationBar").style.display = "flex";
@@ -173,105 +192,142 @@ var handleNavegationBarUser = function () {
 }
 userInformation.addEventListener('click', handleNavegationBarUser);
 
-//Barra de navegación
+//Barra de navegación //////////////////////////////////////////
 
 logInBtn.addEventListener('click', handleSendInfoLogin);
 
-document.querySelector(".navegationBar__SearchBtn").addEventListener('click', function(){
+document.querySelector(".navegationBar__SearchBtn").addEventListener('click', function () {
   handleGoToForm();
 });
 
-document.querySelector(".navegationBar__DiseasesBtn").addEventListener('click', function(){
+document.querySelector(".navegationBar__DiseasesBtn").addEventListener('click', function () {
   handleGoToDisease();
 });
 
-/*document.querySelector(".navegationBar__UserBtn").addEventListener('click', function(){
-  handleGoToUser();
-});*/
-
-//loginBtn.addEventListener('click', registerUser);
-
-let control = new Controller();
 control.test();
 control.logIn();
 
 console.log("deberia poder seguir");
-// Intento de formulario
+
+// Intento de formulario /////////////////////////////////////
 
 var diseases = control.logic.diseases;
 var parent = document.querySelector('.symptomSel__mainform');
+
 diseases.forEach(function (disease) {
   var label = document.createElement('label');
   label.classList.add('symptomSel__label');
   label.innerHTML = `
-    <input type="radio" class="symptomSel__checkbox" id="" data-sym="${disease.methaSymptom}">
+    <input type="checkbox" class="symptomSel__checkbox" id="" data-sym="${disease.methaSymptom}">
     <span>${disease.methaSymptom}</span>
   `;
-  
+
 
   var subParent = document.createElement('div');
   subParent.classList.add('symptomSel__mainform');
   subParent.classList.add('symptomSel__mainform--sub');
 
-  /*
-  diseases.forEach(function (symptoms){
-    var sub = document.createElement('label');
-    sub.classList.add('symptomSel__label');
-    sub.innerHTML = `
-    <input type="radio" class="symptomSel__checkbox" id="" data-sym="${disease.symptoms}">
-    <span>${disease.symptoms}</span>
-  `;
-
-  subParent.appendChild(sub);
-  });
-  */
-
   for (let i = 0; i < disease.symptoms.length; i++) {
     var sub = document.createElement('label');
     sub.classList.add('symptomSel__label');
     sub.classList.add('symptomSel__label--sub');
+
     sub.innerHTML = `
-    <input type="radio" class="symptomSel__checkbox"  id="" data-sym="${disease.symptoms[i]}">
+    <input type="checkbox" class="symptomSel__nocheck" >
     <span>${disease.symptoms[i]}</span>
   `;
 
     subParent.appendChild(sub);
-    
+
   }
-
-
- 
   // crear padre de la sub lista (disease.symptoms)
   // iterar sub lista y crear cada label
   // añadir sub label a sub div
   // añadir sub div al parent después del label
 
-  
-
   parent.appendChild(label);
   parent.appendChild(subParent);
 });
 
+var subsys = document.querySelectorAll(".symptomSel__mainform--sub");
+
+subsys.forEach(function (elem) {
+
+  elem.style.display = "none";
+});;
+
 
 document.querySelectorAll('.symptomSel__checkbox').forEach(item => {
   item.addEventListener('click', event => {
-    var methaSymp = item.dataset.sym;
+
+    // Determina el metasintoma
+    methaSymp = item.dataset.sym;
     console.log(methaSymp);
+
+
     // cambiar el display a flex
   });
- 
+
 });
 
+// mostrar y ocultar los sintomas
+var meta = document.querySelectorAll('.symptomSel__checkbox')
+
+var metaS = Array.apply(null, meta);
+var subb = Array.apply(null, subsys);
+
+var checks = new Array(12).fill(false);
+
+for (let i = 0; i < metaS.length; i++) {
+
+  metaS[i].addEventListener('click', event => {
+    if (checks[i] == true) {
+      subb[i].style.display = "none";
+      checks[i] = false;
+      return;
+    }
+    subb[i].style.display = "flex";
+    checks[i] = true;
+  })
+
+};
 
 
+// Lista de enfermedades
+
+var parentDis = document.querySelector('.diseaseSel__mainform');
+
+diseases.forEach(function (disease) {
+
+  var label = document.createElement('label');
+  label.classList.add('diseaseSel__label');
+  label.innerHTML = `
+    <span class="diseaseSel__checkbox" data-name="${disease.name}">${disease.name}</span>
+  `;
+
+  parentDis.appendChild(label);
+
+});
+
+// Seleccionar enfermedad
+
+document.querySelectorAll('.diseaseSel__checkbox').forEach(item => {
+  item.addEventListener('click', event => {
+    // Determina la enfermedad seleccionada
+    diseaseName = item.dataset.name;
+    console.log(diseaseName);
+
+    handleDiseaseScreen(diseaseName);
+    handleGoToDisease();
+
+  });
+
+});
 
 //Enfermedades contenido
 
 var handleDiseaseScreen = function (disease) {
   var diseasesArray = control.logic.diseases;
-  console.log(disease);
-  console.log(control);
-  console.log(diseasesArray);
   var title;
   var description;
   var images = [undefined, undefined];
@@ -279,7 +335,7 @@ var handleDiseaseScreen = function (disease) {
   var reasons = "Texto de ¿Por qué sucede?";
   var attentionPaths = undefined;
   var preventionMethods = "link al video de YouTube"
-  //Creo que habria que recorrer el arreglo de las enfermedades y matchear lo que recibe esta función (la enfermedad) con el objeto del arreglo de enfermedades y extraer esa información de dicha enfermedad.
+
 
   for (let i = 0; i < diseasesArray.length; i++) {
     if (disease == diseasesArray[i].name) {
@@ -292,9 +348,42 @@ var handleDiseaseScreen = function (disease) {
   document.getElementById('diseaseTitle').innerText = title;
   document.getElementById('diseaseDescription').innerText = description;
 }
-document.getElementById('goToYouTubeVideo').addEventListener('click', function(){
+document.getElementById('goToYouTubeVideo').addEventListener('click', function () {
   window.open('https://www.youtube.com/watch?v=9Js1CbQFUwg');
 });
 
+document.querySelector(".symptomSel__send").addEventListener('click', function () {
+  console.log(control.logic.match(methaSymp));
+  control.logic.match(methaSymp);
+});
 
 
+//Pantalla de videos vinculos
+
+document.getElementById('goToDengueVideo').addEventListener('click', function () {
+  window.open('https://www.youtube.com/watch?v=9Js1CbQFUwg');
+});
+
+document.getElementById('goToAlimentosVideo').addEventListener('click', function () {
+  window.open('https://www.youtube.com/watch?v=CBF5GNVuqwU');
+});
+
+document.getElementById('goToDesnutricionVideo').addEventListener('click', function () {
+  window.open('https://www.youtube.com/watch?v=Cm3mncA-5Fg');
+});
+
+document.getElementById('goToSifilisVideo').addEventListener('click', function () {
+  window.open('https://www.youtube.com/watch?v=OHL2KC09qnI');
+});
+
+document.getElementById('goToXenofobiaVideo').addEventListener('click', function () {
+  window.open('https://www.youtube.com/watch?v=K4kponqwvbg');
+});
+
+document.getElementById('goToBajoPesoVideo').addEventListener('click', function () {
+  window.open('https://www.youtube.com/watch?v=FzB9o-NtBjk');
+});
+
+document.getElementById('goToVaricelaVideo').addEventListener('click', function () {
+  window.open('https://www.youtube.com/watch?v=WGPiDjRQkuE');
+});

@@ -29,27 +29,6 @@
     <div id="map"></div>
   </section>
 
-
-
-
-  <!-- // Landing page antiguo
-  <div class="form-box">
-    <h1>Login Here</h1>
-    <div class="input-box">
-        <i class="fa fa-user"></i>
-        <input type="email" placeholder="Usuario" class="inputUser">
-    </div>
-    <div class="input-box">
-        <i class="fa fa-key"></i>
-        <input type="password" placeholder="Contraseña" class="inputPassword">
-        <span class="eye">
-            <i id="hide1" class="fa fa-eye"></i>
-            <i id="hide2" class="fa fa-eye-slash"></i>
-        </span>
-    </div>
-    <button type="button" class="login-btn">LOGIN</button>
-</div>
--->
   <main class="landingLogIn" style="display: none;">
     <div class="landingLogIn__Logo">
       <img class="landingLogIn__LogoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
@@ -80,24 +59,30 @@
     </section>
   </main>
 
-  <main class="initialScreen" style="display: none;">
+  <main class="initialScreen" style="display: flex;">
     <div class="initialScreen__logo">
       <img class="initialScreen__logoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
     </div>
     <section class="initialScreen__clickScreens">
+      <div>
+        <p>Video de la semana</p>
+        <img src="" alt="">
+      </div>
       <div class="initialScreen__clickScreens__item initialScreen__clickScreens__item--large">
         <img class="initialScreen__clickScreens__item--large--img" src="./Images/LavadoDeManos.jpg" alt="">
         <p class="initialScreen__clickScreens__item--large--title"><strong>Lavado de Manos</strong></p>
         <p class="initialScreen__clickScreens__item--large--text">Ver la más reciente campaña de prevención en tendencia
           esta semana</p>
       </div>
+      <p>Ver todos los videos</p>
       <a class="goToForm">
         <div class="initialScreen__clickScreens__item initialScreen__clickScreens__item--short">
           <div class="initialScreen__clickScreens__item--short--img">
             <img class="initialScreen__clickScreens__item--short--imgJpg" src="./Images/Home-Buscador.png" alt="">
           </div>
           <p class="initialScreen__clickScreens__item--short--title"><strong>Buscador de sintomas</strong></p>
-          <p class="initialScreen__clickScreens__item--short--text">Resuelve un formulario que nos ayudará a entender que
+          <p class="initialScreen__clickScreens__item--short--text">Resuelve un formulario que nos ayudará a entender
+            que
             es lo que estás padeciendo</p>
         </div>
       </a>
@@ -120,18 +105,72 @@
     <div class="whiteSpace"></div>
   </main>
 
+  <main class="videos" style="display: none;">
+    <a id="goToDengueVideo">
+      <div class="disease__actions__item disease__actions__item--short">
+        <div class="disease__actions__item--short--img">
+          <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+        </div>
+        <p class="disease__actions__item--short--title">Dengue</p>
+      </div>
+    </a>
+    <a id="goToAlimentosVideo">
+      <div class="disease__actions__item disease__actions__item--short">
+        <div class="disease__actions__item--short--img">
+          <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+        </div>
+        <p class="disease__actions__item--short--title">Alimentos dañados</p>
+      </div>
+    </a>
+    <a id="goToDesnutricionVideo">
+      <div class="disease__actions__item disease__actions__item--short">
+        <div class="disease__actions__item--short--img">
+          <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+        </div>
+        <p class="disease__actions__item--short--title">Desnutrición</p>
+      </div>
+    </a>
+    <a id="goToSifilisVideo">
+      <div class="disease__actions__item disease__actions__item--short">
+        <div class="disease__actions__item--short--img">
+          <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+        </div>
+        <p class="disease__actions__item--short--title">Sífilis gestacional</p>
+      </div>
+    </a>
+    <a id="goToXenofobiaVideo">
+      <div class="disease__actions__item disease__actions__item--short">
+        <div class="disease__actions__item--short--img">
+          <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+        </div>
+        <p class="disease__actions__item--short--title">Contra la Xenofobia</p>
+      </div>
+    </a>
+    <a id="goToBajoPesoVideo">
+      <div class="disease__actions__item disease__actions__item--short">
+        <div class="disease__actions__item--short--img">
+          <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+        </div>
+        <p class="disease__actions__item--short--title">Bajo peso al nacer</p>
+      </div>
+    </a>
+    <a id="goToVaricelaVideo">
+      <div class="disease__actions__item disease__actions__item--short">
+        <div class="disease__actions__item--short--img">
+          <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+        </div>
+        <p class="disease__actions__item--short--title">Varicela</p>
+      </div>
+    </a>
+    <div class="whiteSpace"></div>
+  </main>
 
   <main class="disease" style="display: none;">
-    <main>
-      <h1>¿Cuales son tus sintomas?</h1>
-    </main>
     <img src="./Images/back.png" alt="" class="disease__back">
     <img src="./Images/logo_solo.png" alt="">
     <div class="disease__info">
       <p class="disease__infotext disease__info__text--title" id="diseaseTitle"></p>
-      <p class="disease__infotext disease__info__text--content" id="diseaseDescription">Es una infección viral
-        transmitida por la picadura de los mosquitos hembra del género Aedes, la cual se ha constituido como un problema creciente para la salud pública
-        mundial.</p>
+      <p class="disease__infotext disease__info__text--content" id="diseaseDescription"></p>
     </div>
     <div class="disease__symptoms">
       <img src="./Images/neutralMan.png" alt="">
@@ -161,7 +200,7 @@
     <div class="whiteSpace"></div>
   </main>
 
-  <main class="symptomSel" style="display: flex;">
+  <main class="symptomSel" style="display: none;">
     <div class="symptomSel__top">
       <a class="symptomSel__back">
         <img src="./Images/back.png" alt="">
@@ -174,6 +213,36 @@
     <div class="symptomSel__mainform"></div>
     <button class="symptomSel__send">Siguiente</button>
     <div class="whiteSpace"></div>
+  </main>
+
+  <main class="diseaseSel" style="display: none;">
+    <div class="diseaseSel__top">
+      <a class="diseaseSel__back">
+        <img src="./Images/back.png" alt="">
+      </a>
+      <img src="./Images/logo_solo.png" class="diseaseSel__logo" alt="">
+    </div>
+
+    <h1 class="diseaseSel__title">Enfermedades</h1>
+
+    <div class="diseaseSel__mainform"></div>
+
+    <div class="whiteSpace"></div>
+  </main>
+
+  <main class="userProfile" style="display: none">
+    <div class="userProfile__top">
+      <a class="userProfile__back">
+        <img src="./Images/back.png" alt="">
+      </a>
+      <img src="./Images/logo_solo.png" class="userProfile__logo" alt="">
+    </div>
+    <div class="userProfile__info" style="position:relative;">
+      <img src="./Images/logo_solo.png" alt="" style="width: 300px; height:300px; position:absolute; left:35%">
+    </div>
+    <div class="userProfile__familyMembers">
+
+    </div>
   </main>
 
   <nav class="navegationBar" style="display: flex;">
