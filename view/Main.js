@@ -211,6 +211,7 @@ var handleGoToDiseaseSel = function () {
   document.querySelector(".navegationBar").style.display = "flex";
   document.querySelector(".initialScreen").style.display = "none";
   document.querySelector(".disease").style.display = "none";
+  document.querySelector(".userProfile").style.display = "none";
   window.scrollTo(0, 0);
   mainDiv.innerHTML = '';
   document.querySelector(".gmaps").style.display = "none";
@@ -228,6 +229,7 @@ var handleGoToDisease = function () {
   document.querySelector(".disease").style.display = "block";
   document.querySelector(".gmaps").style.display = "none";
   document.querySelector(".symptomSel").style.display = "none";
+  document.querySelector(".userProfile").style.display = "none";
   document.querySelector(".diseaseSel").style.display = "none";
   window.scrollTo(0, 0);
 }
@@ -242,6 +244,7 @@ var handleGoToForm = function () {
   document.querySelector(".gmaps").style.display = "none";
   document.querySelector(".symptomSel").style.display = "flex";
   window.scrollTo(0, 0);
+  document.querySelector(".userProfile").style.display = "none";
   mainDiv.innerHTML = '';
 }
 document.querySelector(".goToForm").addEventListener('click', handleGoToForm);
