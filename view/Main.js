@@ -42,7 +42,6 @@ var registerUser = function (event) {
     firebase.auth().signInWithEmailAndPassword(inputMail.value, inputPass.value).then(function (user) {
       console.log("El usuario se conectó");
       getUpdates(inputMail.value, true);
-      getUpdates(inputMail.value, true);
       handleGoToMain();
     }).catch(function (error) {
       //error
