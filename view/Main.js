@@ -13,7 +13,6 @@ var gmapsBtn = document.querySelector(".gomap");
 var goToDisease = document.querySelector(".goToDisease");
 var methaSymp;
 var diseaseName;
-var correoo;
 var mainDiv = document.querySelector('.disease__buttoncontainer');
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -110,7 +109,7 @@ var sendQuantity = function (event) {
     age: 40,
     sex: "male",
     familyMembers: ["handemore7@gmail.com", "correo1@gmail.com", "correo2@gmail.com", "correo3@gmail.com"],
-    id: 101011,
+    id: Math.random(1, 1000),
   }).then(function () {
     console.log("se envió la info");
 

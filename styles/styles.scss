@@ -221,7 +221,7 @@ html {
         margin-top: 200px;
         height: 100%;
         width: 100%;
-        filter: drop-shadow(16px 16px 10px rgba(31, 31, 31, 0.096));
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
 
         &__item {
             margin: 20px 35px;
@@ -309,6 +309,7 @@ html {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
 
     &__image {
         margin: 20px 70px;
@@ -409,7 +410,7 @@ html {
 
         margin: 1em 0;
 
-        filter: drop-shadow(16px 16px 10px rgba(31, 31, 31, 0.096));
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
 
         &--disabled {
             background-color: #fff;
@@ -483,6 +484,7 @@ html {
 }
 
 .symptomSel {
+
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -530,6 +532,7 @@ html {
         display: flex;
         flex-direction: row;
         align-items: center;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
 
         &--sub {
             background-color: cornsilk;
@@ -562,7 +565,8 @@ html {
         border-radius: 25px;
         padding: .5em 0;
 
-        margin-bottom: 25%;
+
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
     }
 }
 
@@ -618,6 +622,8 @@ html {
         height: fit-content;
         padding: 1em;
 
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
+
         &--sub {
             background-color: cornsilk;
         }
@@ -648,6 +654,7 @@ html {
             padding: .5em 0;
 
             margin-bottom: 25%;
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
         }
     }
 }
@@ -677,7 +684,7 @@ html {
             background-color: royalblue;
             color: #fff;
 
-            filter: drop-shadow(10px 10px 10px rgba(31, 31, 31, 0.096));
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
 
             &--short {
                 width: 41%;
@@ -770,6 +777,7 @@ html {
         align-items: baseline;
         justify-content: space-around;
         margin: 2em auto;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
 
     }
 
