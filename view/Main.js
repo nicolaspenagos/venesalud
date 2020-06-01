@@ -13,7 +13,7 @@ var gmapsBtn = document.querySelector(".gomap");
 var goToDisease = document.querySelector(".goToDisease");
 var methaSymp;
 var diseaseName;
-
+var mainDiv = document.querySelector('.disease__buttoncontainer');
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyBoMBY4QXq_jozUkArf3x1DpDqDmDnJUPM",
@@ -68,6 +68,8 @@ document.querySelector(".disease__back").addEventListener('click', function () {
   document.querySelector(".diseaseSel").style.display = "flex";
   document.querySelector(".videos").style.display = "none";
   window.scrollTo(0, 0);
+
+  mainDiv.innerHTML = '';
 });
 
 document.getElementById("diseaseBack").addEventListener('click', function () {
@@ -161,6 +163,7 @@ var handleGoToMain = function () {
   document.querySelector(".symptomSel").style.display = "none";
   document.querySelector(".diseaseSel").style.display = "none";
   window.scrollTo(0, 0);
+  mainDiv.innerHTML = '';
   document.querySelector(".videos").style.display = "none";
   document.querySelector(".userProfile").style.display = "none";
 }
@@ -173,6 +176,7 @@ var handleGoToDiseaseSel = function () {
   document.querySelector(".initialScreen").style.display = "none";
   document.querySelector(".disease").style.display = "none";
   window.scrollTo(0, 0);
+  mainDiv.innerHTML = '';
   document.querySelector(".gmaps").style.display = "none";
   document.querySelector(".symptomSel").style.display = "none";
   document.querySelector(".diseaseSel").style.display = "flex";
@@ -202,6 +206,7 @@ var handleGoToForm = function () {
   document.querySelector(".gmaps").style.display = "none";
   document.querySelector(".symptomSel").style.display = "flex";
   window.scrollTo(0, 0);
+  mainDiv.innerHTML = '';
 }
 document.querySelector(".goToForm").addEventListener('click', handleGoToForm);
 
@@ -356,6 +361,7 @@ var handleDiseaseScreen = function (disease) {
   var link;
   var symptoms;
   var reasons = "Texto de ¿Por qué sucede?";
+  var idiseases;
 
 
   for (let i = 0; i < diseasesArray.length; i++) {
@@ -373,15 +379,47 @@ var handleDiseaseScreen = function (disease) {
   document.getElementById('diseaseDescription').innerText = description;
   document.getElementById('goToYouTubeVideo').addEventListener('click', function () {
     window.open(link);
+
   });
+
+  //////////////// BOTONES DE LA ENFERMEDAD////////////
+
   document.querySelector(".imgDisease").src = "./Images/uxpin/" + images[1];
 
   console.log(symptoms);
+
   for (let i = 0; i < (symptoms.length) / 2; i++) {
-    var element = symptoms[i];
+
+    var sub = document.createElement('button');
+    sub.classList.add('disease__simbut');
+    sub.classList.add('disease__simbut--disabled');
+
+    sub.innerHTML = `
+    ${symptoms[i]}
+  `;
+
+    mainDiv.appendChild(sub);
 
   }
+
+  ////////////////////// Enabled - disabled /////////////////////
+
+  var allbuts = document.querySelectorAll('.disease__simbut');
+
+  var botoness = Array.apply(null, allbuts);
+
+  for (let i = 0; i < botoness.length; i++) {
+
+    botoness[i].addEventListener('click', function () {
+      idiseases = i;
+      console.log(idiseases);
+      botoness[i].classList.toggle('disease__simbut--enabled');
+      document.querySelector('.imgDisease').src = "./Images/uxpin/" + images[idiseases];
+    });
+  }
+
 }
+
 
 document.querySelector(".symptomSel__send").addEventListener('click', function () {
 
@@ -402,6 +440,7 @@ document.getElementById('goToAllVideos').addEventListener('click', function () {
   document.querySelector(".initialScreen").style.display = "none";
   document.querySelector(".disease").style.display = "none";
   document.querySelector(".gmaps").style.display = "none";
+  mainDiv.innerHTML = '';
   document.querySelector(".symptomSel").style.display = "none";
   document.querySelector(".diseaseSel").style.display = "none";
   document.querySelector(".videos").style.display = "block";

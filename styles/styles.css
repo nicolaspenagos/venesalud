@@ -417,6 +417,18 @@ html {
   padding: .10em 1em;
   text-align: center;
   margin: 1em 0;
+  -webkit-filter: drop-shadow(16px 16px 10px rgba(31, 31, 31, 0.096));
+          filter: drop-shadow(16px 16px 10px rgba(31, 31, 31, 0.096));
+}
+
+.disease__simbut--disabled {
+  background-color: #fff;
+  color: midnightblue;
+}
+
+.disease__simbut--enabled {
+  background-color: #2C74F9;
+  color: #fff;
 }
 
 .disease__actions {
@@ -785,6 +797,15 @@ html {
   margin: .5em;
 }
 
+.userProfile__name--title {
+  color: #2056b9;
+  font-size: 3em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: .4em auto;
+}
+
 .userProfile__desc {
   font-size: 2.5em;
   margin: .2em;
@@ -794,5 +815,41 @@ html {
   width: 300px;
   margin: 9em auto;
   margin-bottom: 3em;
+}
+
+.userProfile__familymembers {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  margin: 1em auto;
+}
+
+.userProfile__member {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 300px;
+}
+
+.userProfile__content {
+  font-size: 2em;
+  border-radius: 20px;
+  -webkit-margin-before: .3em;
+          margin-block-start: .3em;
+  -webkit-margin-after: .3em;
+          margin-block-end: .3em;
 }
 /*# sourceMappingURL=styles.css.map */
