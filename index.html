@@ -31,7 +31,7 @@
 
   <!-- ///////////////////////////////////////////// LOGIN  ////////////////////////////////////////////// -->
 
-  <main class="landingLogIn" style="display: none;">
+  <main class="landingLogIn" style="display: flex;">
     <div class="landingLogIn__Logo">
       <img class="landingLogIn__LogoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
     </div>
@@ -71,18 +71,23 @@
     </div>
     <section class="initialScreen__clickScreens">
       <div>
-        <p>Video de la semana</p>
-        <img src="" alt="">
+        <h1 class="initialScreen__Vtitle">Video de la semana ></h1>
+
       </div>
-      <div class="initialScreen__clickScreens__item initialScreen__clickScreens__item--large">
-        <img class="initialScreen__clickScreens__item--large--img" src="./Images/LavadoDeManos.jpg" alt="">
-        <p class="initialScreen__clickScreens__item--large--title"><strong>Lavado de Manos</strong></p>
-        <p class="initialScreen__clickScreens__item--large--text">Ver la más reciente campaña de prevención en tendencia
-          esta semana</p>
-      </div>
+
+      <a id="goToDengueVideo">
+        <div class="initialScreen__clickScreens__item initialScreen__clickScreens__item--large">
+          <img class="initialScreen__clickScreens__item--large--img" src="./Images/thumbnails/maxresdefault.jpg" alt="">
+          <p class="initialScreen__clickScreens__item--large--title"><strong>Dengue</strong></p>
+          <p class="initialScreen__clickScreens__item--large--text">Ver la más reciente campaña de prevención en
+            tendencia
+            esta semana</p>
+        </div>
+
+      </a>
       <a id="goToAllVideos">
         <div>
-          <p>Ver todos los videos</p>
+          <p class="initialScreen__link">Ver todos los videos ></p>
         </div>
       </a>
       <a class="goToForm">
@@ -118,10 +123,18 @@
   <!-- ///////////////////////////////////////////// VIDEOS  ////////////////////////////////////////////// -->
 
   <main class="videos" style="display: none;">
+
+    <div class="symptomSel__top">
+      <a class="symptomSel__back dback2">
+        <img src="./Images/back.png" alt="">
+      </a>
+      <img src="./Images/logo_solo.png" class="symptomSel__logo" alt="">
+    </div>
+    <h1 class="symptomSel__title">Videos</h1>
     <a id="goToDengueVideo">
       <div class="videos__actions__item videos__actions__item--short">
         <div class="videos__actions__item--short--img">
-          <img class="videos__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+          <img class="videos__actions__item--short--imgJpg" src="./Images/thumbnails/DengueTmb.png" alt="">
         </div>
         <p class="videos__actions__item--short--title">Dengue</p>
       </div>
@@ -129,7 +142,7 @@
     <a id="goToAlimentosVideo">
       <div class="videos__actions__item videos__actions__item--short">
         <div class="videos__actions__item--short--img">
-          <img class="videos__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+          <img class="videos__actions__item--short--imgJpg" src="./Images/thumbnails/AlimentosTmb.png" alt="">
         </div>
         <p class="videos__actions__item--short--title">Alimentos dañados</p>
       </div>
@@ -137,7 +150,7 @@
     <a id="goToDesnutricionVideo">
       <div class="videos__actions__item videos__actions__item--short">
         <div class="videos__actions__item--short--img">
-          <img class="videos__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+          <img class="videos__actions__item--short--imgJpg" src="./Images/thumbnails/DesnutricionTmb.png" alt="">
         </div>
         <p class="videos__actions__item--short--title">Desnutrición</p>
       </div>
@@ -145,7 +158,7 @@
     <a id="goToSifilisVideo">
       <div class="videos__actions__item videos__actions__item--short">
         <div class="videos__actions__item--short--img">
-          <img class="videos__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+          <img class="videos__actions__item--short--imgJpg" src="./Images/thumbnails/SifilisTmb.png" alt="">
         </div>
         <p class="videos__actions__item--short--title">Sífilis gestacional</p>
       </div>
@@ -153,7 +166,7 @@
     <a id="goToXenofobiaVideo">
       <div class="videos__actions__item videos__actions__item--short">
         <div class="videos__actions__item--short--img">
-          <img class="videos__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+          <img class="videos__actions__item--short--imgJpg" src="./Images/thumbnails/XenofobiaTmb.png" alt="">
         </div>
         <p class="videos__actions__item--short--title">Contra la Xenofobia</p>
       </div>
@@ -161,7 +174,7 @@
     <a id="goToBajoPesoVideo">
       <div class="videos__actions__item videos__actions__item--short">
         <div class="videos__actions__item--short--img">
-          <img class="videos__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+          <img class="videos__actions__item--short--imgJpg" src="./Images/thumbnails/BajoPesoTmb.png" alt="">
         </div>
         <p class="videos__actions__item--short--title">Bajo peso al nacer</p>
       </div>
@@ -169,7 +182,7 @@
     <a id="goToVaricelaVideo">
       <div class="videos__actions__item videos__actions__item--short">
         <div class="videos__actions__item--short--img">
-          <img class="videos__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+          <img class="videos__actions__item--short--imgJpg" src="./Images/thumbnails/VaricelaTmb.png" alt="">
         </div>
         <p class="videos__actions__item--short--title">Varicela</p>
       </div>
@@ -239,7 +252,7 @@
 
   <main class="diseaseSel" style="display: none;">
     <div class="diseaseSel__top">
-      <a class="diseaseSel__back" id="diseaseBack">
+      <a class="diseaseSel__back dback" id="diseaseBack">
         <img src="./Images/back.png" alt="">
       </a>
       <img src="./Images/logo_solo.png" class="diseaseSel__logo" alt="">
@@ -254,10 +267,10 @@
 
   <!-- ///////////////////////////////////////////// USER PROFILE ////////////////////////////////////////////// -->
 
-  <main class="userProfile" style="display: flex">
+  <main class="userProfile" style="display: none">
 
     <div class="diseaseSel__top userProfile__top">
-      <a class="diseaseSel__back" id="diseaseBack">
+      <a class="diseaseSel__back" id="userProfileBack">
         <img src="./Images/back.png" alt="">
       </a>
       <img src="./Images/logo_solo.png" class="diseaseSel__logo" alt="">
@@ -267,24 +280,22 @@
 
     <div class="userProfile__info">
       <img src="./Images/userProfile.jpeg" class="userProfile__img" alt="">
-      <h1 class="userProfile__name">Yoyas toyas</h1>
-      <p class="userProfile__desc userProfile__desc--age">19 anos</p>
-      <p class="userProfile__desc userProfile__desc--gender">Masculino</p>
+      <h1 class="userProfile__name"></h1>
+      <p class="userProfile__desc userProfile__desc--age"></p>
+      <p class="userProfile__desc userProfile__desc--gender"></p>
     </div>
+
     <div class="userProfile__familyMembers">
       <h2 class="userProfile__name userProfile__name--title">Integrantes de la familia</h2>
-      <div class="userProfile__member">
-        <p class="userProfile__content">Juan Sanchez</p>
-        <p class="userProfile__content">21 anos</p>
-        <p class="userProfile__content">Masculino</p>
-      </div>
 
     </div>
+
+    <div class="whiteSpace"></div>
   </main>
 
   <!-- ///////////////////////////////////////////// NAVIGATION BAR  ////////////////////////////////////////////// -->
 
-  <nav class="navegationBar" style="display: flex;">
+  <nav class="navegationBar" style="display: none;">
     <a class="navegationBar__HomeBtn">
       <section class="navegationBar__Home">
         <img class="navegationBar__image navegationBar__Home--On" src="./Images/Icono-home Off.png" alt="">

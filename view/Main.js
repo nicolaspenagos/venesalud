@@ -48,8 +48,6 @@ var registerUser = function (event) {
   });
 }
 
-//Aqui termina lo de firebase
-
 //Aqui empiezan las interacciones como cambios de pantalla
 
 // codigo base: document.querySelector("").addEventListener('click', function(){}); 
@@ -75,8 +73,7 @@ document.querySelector(".disease__back").addEventListener('click', function () {
 document.getElementById("diseaseBack").addEventListener('click', function () {
   handleGoToMain();
 });
-
-document.getElementById("diseaseBack").addEventListener('click', function () {
+document.getElementById("userProfileBack").addEventListener('click', function () {
   handleGoToMain();
 });
 var handleGoToRegister = function (event) {
@@ -94,7 +91,7 @@ var handleSendInfoLogin = function (event) {
   sendQuantity();
   firebase.auth().signInWithEmailAndPassword(inputUserLogIn.value, inputPasswordLogIn.value).then(function (user) {
     console.log("El usuario se conectó");
-    //getUpdates();
+    getUpdates();
     handleGoToMain();
   }).catch(function (error) {
     //error
@@ -126,33 +123,70 @@ var getUpdates = function (username, deep) {
   var docRefColection = firestore.doc("/" + username + "/Caracteristicas del usuario");
   docRefColection.get().then(function (doc) {
     if (doc && doc.exists) {
-      const myData = doc.data();
+      var myData = doc.data();
       let theNickname = myData.nickname;
       let theAge = myData.age;
       let theSex = myData.sex;
       let theId = myData.id;
 
-      if (deep) {
+      /*if (deep) {
         // usuario principal
-        //setMainUser(myData)
+        setMainUser(myData)
       } else {
         // parte de la familia
-        //addToFamily(myData)
-      }
+        addToFamily(myData)
+      }*/
 
-      //console.log(myData.familyMembers)
+      //console.log(myData);
       if (deep && myData.familyMembers && myData.familyMembers.length) {
         myData.familyMembers.forEach(function (member) {
+          console.log(deep);
+          console.log(member);
+          document.querySelector(".userProfile__name").innerText = theNickname;
+          document.querySelector(".userProfile__desc--age").innerText = theAge + " años";
+          document.querySelector(".userProfile__desc--gender").innerText = theSex;
           getUpdates(member);
-        })
+        });
       }
+
+      createFamilyMembers(theNickname, theAge, theSex);
+
+
       //console.log("El nickname del usuario es: " + theNickname + ", tiene " + theAge + " años, es " + theSex + " y su ID es: " + theId);
     }
   });
 }
 
-getUpdates('handemore7@gmail.com', true);
+var familyparent = document.querySelector('.userProfile__familyMembers');
 
+var createFamilyMembers = function (nombre, edad, genero) {
+
+  var elem = document.createElement('div');
+  elem.classList.add('userProfile__member');
+
+  elem.innerHTML = `
+  <p class="userProfile__content">${nombre}</p>
+  <p class="userProfile__content">${edad} ` + `Años` + `</p>
+  <p class="userProfile__content">${genero}</p>
+  `;
+  // miembros = arreglo 4 correos
+
+
+  //console.log(familyparent);
+  //console.log(elem);
+  familyparent.appendChild(elem);
+}
+
+/*
+<div class="userProfile__member">
+        <p class="userProfile__content">Juan Sanchez</p>
+        <p class="userProfile__content">21 anos</p>
+        <p class="userProfile__content">Masculino</p>
+      </div>
+*/
+
+getUpdates(inputUserLogIn.value, true);
+console.log("aqui ya envié el correo");
 var handleGoToMain = function () {
   document.querySelector(".landingLogIn").style.display = "none";
   document.querySelector(".landingRegister").style.display = "none";
@@ -162,11 +196,13 @@ var handleGoToMain = function () {
   document.querySelector(".gmaps").style.display = "none";
   document.querySelector(".symptomSel").style.display = "none";
   document.querySelector(".diseaseSel").style.display = "none";
-  window.scrollTo(0, 0);
-  mainDiv.innerHTML = '';
   document.querySelector(".videos").style.display = "none";
   document.querySelector(".userProfile").style.display = "none";
+  window.scrollTo(0, 0);
+  mainDiv.innerHTML = '';
 }
+
+//Aqui termina lo de firebase
 
 var handleGoToDiseaseSel = function () {
   //toca pasarle el nombre de la enfermedad 
@@ -227,8 +263,31 @@ document.querySelector(".navegationBar__SearchBtn").addEventListener('click', fu
   handleGoToForm();
 });
 
+document.querySelector(".dback").addEventListener('click', function () {
+  handleGoToMain();
+});
+
+document.querySelector(".dback2").addEventListener('click', function () {
+  handleGoToMain();
+});
+
 document.querySelector(".navegationBar__DiseasesBtn").addEventListener('click', function () {
   handleGoToDisease();
+});
+
+document.querySelector(".navegationBar__UserBtn").addEventListener('click', function () {
+  document.querySelector(".landingLogIn").style.display = "none";
+  document.querySelector(".landingRegister").style.display = "none";
+  document.querySelector(".navegationBar").style.display = "flex";
+  document.querySelector(".initialScreen").style.display = "none";
+  document.querySelector(".disease").style.display = "none";
+  document.querySelector(".gmaps").style.display = "none";
+  document.querySelector(".symptomSel").style.display = "none";
+  document.querySelector(".diseaseSel").style.display = "none";
+  window.scrollTo(0, 0);
+  mainDiv.innerHTML = '';
+  document.querySelector(".videos").style.display = "none";
+  document.querySelector(".userProfile").style.display = "flex";
 });
 
 control.test();
