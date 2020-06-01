@@ -13,6 +13,7 @@ var gmapsBtn = document.querySelector(".gomap");
 var goToDisease = document.querySelector(".goToDisease");
 var methaSymp;
 var diseaseName;
+var correoo;
 var mainDiv = document.querySelector('.disease__buttoncontainer');
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -39,6 +40,7 @@ var registerUser = function (event) {
   inputPass = document.querySelector(".landingRegister__input--password");
   inputMail = document.querySelector(".landingRegister__input--mail");
   firebase.auth().createUserWithEmailAndPassword(inputMail.value, inputPass.value).then(function (event) {
+    getUpdates(inputMail.value, true);
     handleGoToMain();
   }).catch(function (error) {
     // Handle Errors here.
@@ -91,7 +93,7 @@ var handleSendInfoLogin = function (event) {
   sendQuantity();
   firebase.auth().signInWithEmailAndPassword(inputUserLogIn.value, inputPasswordLogIn.value).then(function (user) {
     console.log("El usuario se conectó");
-    getUpdates();
+    getUpdates(inputUserLogIn.value, true);
     handleGoToMain();
   }).catch(function (error) {
     //error
@@ -185,7 +187,6 @@ var createFamilyMembers = function (nombre, edad, genero) {
       </div>
 */
 
-getUpdates(inputUserLogIn.value, true);
 console.log("aqui ya envié el correo");
 var handleGoToMain = function () {
   document.querySelector(".landingLogIn").style.display = "none";
