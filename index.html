@@ -29,6 +29,8 @@
     <div id="map"></div>
   </section>
 
+  <!-- ///////////////////////////////////////////// LOGIN  ////////////////////////////////////////////// -->
+
   <main class="landingLogIn" style="display: none;">
     <div class="landingLogIn__Logo">
       <img class="landingLogIn__LogoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
@@ -43,6 +45,8 @@
             class="landingLogIn__createAccountBtn"><strong>Registrate</strong></p>
     </section>
   </main>
+
+  <!-- ///////////////////////////////////////////// REGISTER  ////////////////////////////////////////////// -->
 
   <main class="landingRegister" style="display: none;">
     <img class="landingRegister__logo" src="./Images/Logo-Completo-Pequeño.png" alt="">
@@ -59,7 +63,9 @@
     </section>
   </main>
 
-  <main class="initialScreen" style="display: flex;">
+  <!-- ///////////////////////////////////////////// INITIAL SCREEN  ////////////////////////////////////////////// -->
+
+  <main class="initialScreen" style="display: none;">
     <div class="initialScreen__logo">
       <img class="initialScreen__logoImg" src="./Images/Logo-Completo-Pequeño.png" alt="">
     </div>
@@ -74,7 +80,11 @@
         <p class="initialScreen__clickScreens__item--large--text">Ver la más reciente campaña de prevención en tendencia
           esta semana</p>
       </div>
-      <p>Ver todos los videos</p>
+      <a id="goToAllVideos">
+        <div>
+          <p>Ver todos los videos</p>
+        </div>
+      </a>
       <a class="goToForm">
         <div class="initialScreen__clickScreens__item initialScreen__clickScreens__item--short">
           <div class="initialScreen__clickScreens__item--short--img">
@@ -105,75 +115,86 @@
     <div class="whiteSpace"></div>
   </main>
 
+  <!-- ///////////////////////////////////////////// VIDEOS  ////////////////////////////////////////////// -->
+
   <main class="videos" style="display: none;">
     <a id="goToDengueVideo">
-      <div class="disease__actions__item disease__actions__item--short">
-        <div class="disease__actions__item--short--img">
-          <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+      <div class="videos__actions__item videos__actions__item--short">
+        <div class="videos__actions__item--short--img">
+          <img class="videos__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
         </div>
-        <p class="disease__actions__item--short--title">Dengue</p>
+        <p class="videos__actions__item--short--title">Dengue</p>
       </div>
     </a>
     <a id="goToAlimentosVideo">
-      <div class="disease__actions__item disease__actions__item--short">
-        <div class="disease__actions__item--short--img">
-          <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+      <div class="videos__actions__item videos__actions__item--short">
+        <div class="videos__actions__item--short--img">
+          <img class="videos__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
         </div>
-        <p class="disease__actions__item--short--title">Alimentos dañados</p>
+        <p class="videos__actions__item--short--title">Alimentos dañados</p>
       </div>
     </a>
     <a id="goToDesnutricionVideo">
-      <div class="disease__actions__item disease__actions__item--short">
-        <div class="disease__actions__item--short--img">
-          <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+      <div class="videos__actions__item videos__actions__item--short">
+        <div class="videos__actions__item--short--img">
+          <img class="videos__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
         </div>
-        <p class="disease__actions__item--short--title">Desnutrición</p>
+        <p class="videos__actions__item--short--title">Desnutrición</p>
       </div>
     </a>
     <a id="goToSifilisVideo">
-      <div class="disease__actions__item disease__actions__item--short">
-        <div class="disease__actions__item--short--img">
-          <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+      <div class="videos__actions__item videos__actions__item--short">
+        <div class="videos__actions__item--short--img">
+          <img class="videos__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
         </div>
-        <p class="disease__actions__item--short--title">Sífilis gestacional</p>
+        <p class="videos__actions__item--short--title">Sífilis gestacional</p>
       </div>
     </a>
     <a id="goToXenofobiaVideo">
-      <div class="disease__actions__item disease__actions__item--short">
-        <div class="disease__actions__item--short--img">
-          <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+      <div class="videos__actions__item videos__actions__item--short">
+        <div class="videos__actions__item--short--img">
+          <img class="videos__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
         </div>
-        <p class="disease__actions__item--short--title">Contra la Xenofobia</p>
+        <p class="videos__actions__item--short--title">Contra la Xenofobia</p>
       </div>
     </a>
     <a id="goToBajoPesoVideo">
-      <div class="disease__actions__item disease__actions__item--short">
-        <div class="disease__actions__item--short--img">
-          <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+      <div class="videos__actions__item videos__actions__item--short">
+        <div class="videos__actions__item--short--img">
+          <img class="videos__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
         </div>
-        <p class="disease__actions__item--short--title">Bajo peso al nacer</p>
+        <p class="videos__actions__item--short--title">Bajo peso al nacer</p>
       </div>
     </a>
     <a id="goToVaricelaVideo">
-      <div class="disease__actions__item disease__actions__item--short">
-        <div class="disease__actions__item--short--img">
-          <img class="disease__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
+      <div class="videos__actions__item videos__actions__item--short">
+        <div class="videos__actions__item--short--img">
+          <img class="videos__actions__item--short--imgJpg" src="./Images/Home-Enfermedades.png" alt="">
         </div>
-        <p class="disease__actions__item--short--title">Varicela</p>
+        <p class="videos__actions__item--short--title">Varicela</p>
       </div>
     </a>
     <div class="whiteSpace"></div>
   </main>
 
+  <!-- ///////////////////////////////////////////// DISEASE1  ////////////////////////////////////////////// -->
+
   <main class="disease" style="display: none;">
-    <img src="./Images/back.png" alt="" class="disease__back">
-    <img src="./Images/logo_solo.png" alt="">
+
+    <div class="symptomSel__top">
+      <a class="symptomSel__back disease__back">
+        <img src="./Images/back.png" alt="">
+      </a>
+      <img src="./Images/logo_solo.png" class="symptomSel__logo" alt="">
+    </div>
+
+
     <div class="disease__info">
       <p class="disease__infotext disease__info__text--title" id="diseaseTitle"></p>
       <p class="disease__infotext disease__info__text--content" id="diseaseDescription"></p>
     </div>
     <div class="disease__symptoms">
-      <img src="./Images/neutralMan.png" alt="">
+      <img src="./Images/neutralMan.png" alt="" class="imgDisease">
       <input type="button" value="Dolor en huesos y articulaciones">
     </div>
     <div class="disease__actions">
@@ -200,9 +221,11 @@
     <div class="whiteSpace"></div>
   </main>
 
+  <!-- ///////////////////////////////////////////// SYMPTOMFORM  ////////////////////////////////////////////// -->
+
   <main class="symptomSel" style="display: none;">
     <div class="symptomSel__top">
-      <a class="symptomSel__back">
+      <a class="symptomSel__back" id="diseaseBack">
         <img src="./Images/back.png" alt="">
       </a>
       <img src="./Images/logo_solo.png" class="symptomSel__logo" alt="">
@@ -215,9 +238,11 @@
     <div class="whiteSpace"></div>
   </main>
 
+  <!-- ///////////////////////////////////////////// LOGIN  ////////////////////////////////////////////// -->
+
   <main class="diseaseSel" style="display: none;">
     <div class="diseaseSel__top">
-      <a class="diseaseSel__back">
+      <a class="diseaseSel__back" id="diseaseBack">
         <img src="./Images/back.png" alt="">
       </a>
       <img src="./Images/logo_solo.png" class="diseaseSel__logo" alt="">
@@ -230,20 +255,27 @@
     <div class="whiteSpace"></div>
   </main>
 
-  <main class="userProfile" style="display: none">
-    <div class="userProfile__top">
-      <a class="userProfile__back">
+  <!-- ///////////////////////////////////////////// USER PROFILE ////////////////////////////////////////////// -->
+
+  <main class="userProfile" style="display: flex">
+
+    <div class="diseaseSel__top userProfile__top">
+      <a class="diseaseSel__back" id="diseaseBack">
         <img src="./Images/back.png" alt="">
       </a>
-      <img src="./Images/logo_solo.png" class="userProfile__logo" alt="">
+      <img src="./Images/logo_solo.png" class="diseaseSel__logo" alt="">
     </div>
-    <div class="userProfile__info" style="position:relative;">
-      <img src="./Images/logo_solo.png" alt="" style="width: 300px; height:300px; position:absolute; left:35%">
+
+
+    <div class="userProfile__info">
+      <img src="./Images/userProfile.jpeg" class="userProfile__img" alt="">
     </div>
     <div class="userProfile__familyMembers">
 
     </div>
   </main>
+
+  <!-- ///////////////////////////////////////////// NAVIGATION BAR  ////////////////////////////////////////////// -->
 
   <nav class="navegationBar" style="display: flex;">
     <a class="navegationBar__HomeBtn">
@@ -271,6 +303,8 @@
       </section>
     </a>
   </nav>
+
+  <!-- ///////////////////////////////////////////// SCRIPTS  ////////////////////////////////////////////// -->
 
   <script src="./data/helpCenterData.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>

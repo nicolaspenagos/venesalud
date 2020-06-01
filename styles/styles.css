@@ -356,6 +356,10 @@ html {
   display: none;
 }
 
+.imgDisease {
+  width: 400px;
+}
+
 .disease__info__text {
   color: royalblue;
 }
@@ -651,5 +655,82 @@ html {
 .whiteSpace {
   width: 100%;
   height: 180px;
+}
+
+.videos__actions {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 100px;
+  height: 100%;
+  width: 100%;
+}
+
+.videos__actions__item {
+  margin: 20px 35px;
+  font-size: 50px;
+  color: #000;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 50px;
+  background-color: royalblue;
+  color: #fff;
+}
+
+.videos__actions__item--short {
+  width: 41%;
+  height: 40%;
+}
+
+.videos__actions__item--short--img {
+  background-color: white;
+  height: 60%;
+  border-radius: 50px 50px 0px 0px;
+}
+
+.videos__actions__item--short--imgJpg {
+  width: 80%;
+  margin-top: 25px;
+  margin-left: 40px;
+}
+
+.videos__actions__item--short--title {
+  text-align: left;
+  margin-top: .25em;
+  margin-left: 5%;
+  margin-bottom: .5em;
+  font-size: 40px;
+}
+
+.userProfile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.userProfile__top {
+  width: 100%;
+}
+
+.userProfile__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.userProfile__img {
+  width: 300px;
+  margin: 9em auto;
 }
 /*# sourceMappingURL=styles.css.map */

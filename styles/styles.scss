@@ -344,6 +344,10 @@ html {
     }
 }
 
+.imgDisease {
+    width: 400px;
+}
+
 .disease {
     &__info {
         &__text {
@@ -362,6 +366,7 @@ html {
             }
         }
     }
+
 
     &__actions {
         flex-direction: column;
@@ -597,6 +602,79 @@ html {
     height: 180px;
 }
 
+
+.videos {
+    &__actions {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+        height: 100%;
+        width: 100%;
+
+        &__item {
+            margin: 20px 35px;
+
+            font-size: 50px;
+            color: #000;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 50px;
+            background-color: royalblue;
+            color: #fff;
+
+            &--short {
+                width: 41%;
+                height: 40%;
+
+                &--img {
+                    background-color: white;
+                    height: 60%;
+                    border-radius: 50px 50px 0px 0px;
+                }
+
+                &--imgJpg {
+                    width: 80%;
+                    margin-top: 25px;
+                    margin-left: 40px;
+                }
+
+                &--title {
+                    text-align: left;
+                    margin-top: .25em;
+                    margin-left: 5%;
+                    margin-bottom: .5em;
+                    font-size: 40px;
+
+                }
+            }
+        }
+
+    }
+}
+
+.userProfile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    &__top {
+        width: 100%;
+
+    }
+
+    &__info {
+        display: flex;
+        width: 100%;
+    }
+
+    &__img {
+        width: 300px;
+        margin: 9em auto;
+
+    }
+
+}
 
 @media (min-width: 600px) {
     // Aqui va lo responsive para las pantallas de escritorio

@@ -58,9 +58,25 @@ document.querySelector(".symptomSel__back").addEventListener('click', function (
   handleGoToMain();
 });
 document.querySelector(".disease__back").addEventListener('click', function () {
+  document.querySelector(".landingLogIn").style.display = "none";
+  document.querySelector(".landingRegister").style.display = "none";
+  document.querySelector(".navegationBar").style.display = "flex";
+  document.querySelector(".initialScreen").style.display = "none";
+  document.querySelector(".disease").style.display = "none";
+  document.querySelector(".gmaps").style.display = "none";
+  document.querySelector(".symptomSel").style.display = "none";
+  document.querySelector(".diseaseSel").style.display = "flex";
+  document.querySelector(".videos").style.display = "none";
+  window.scrollTo(0, 0);
+});
+
+document.getElementById("diseaseBack").addEventListener('click', function () {
   handleGoToMain();
 });
 
+document.getElementById("diseaseBack").addEventListener('click', function () {
+  handleGoToMain();
+});
 var handleGoToRegister = function (event) {
   document.querySelector(".landingLogIn").style.display = "none";
   document.querySelector(".landingRegister").style.display = "flex";
@@ -144,6 +160,9 @@ var handleGoToMain = function () {
   document.querySelector(".gmaps").style.display = "none";
   document.querySelector(".symptomSel").style.display = "none";
   document.querySelector(".diseaseSel").style.display = "none";
+  window.scrollTo(0, 0);
+  document.querySelector(".videos").style.display = "none";
+  document.querySelector(".userProfile").style.display = "none";
 }
 
 var handleGoToDiseaseSel = function () {
@@ -153,6 +172,7 @@ var handleGoToDiseaseSel = function () {
   document.querySelector(".navegationBar").style.display = "flex";
   document.querySelector(".initialScreen").style.display = "none";
   document.querySelector(".disease").style.display = "none";
+  window.scrollTo(0, 0);
   document.querySelector(".gmaps").style.display = "none";
   document.querySelector(".symptomSel").style.display = "none";
   document.querySelector(".diseaseSel").style.display = "flex";
@@ -169,6 +189,7 @@ var handleGoToDisease = function () {
   document.querySelector(".gmaps").style.display = "none";
   document.querySelector(".symptomSel").style.display = "none";
   document.querySelector(".diseaseSel").style.display = "none";
+  window.scrollTo(0, 0);
 }
 //document.querySelector(".diseaseSel__label").addEventListener('click', handleGoToDisease);
 
@@ -180,6 +201,7 @@ var handleGoToForm = function () {
   document.querySelector(".disease").style.display = "none";
   document.querySelector(".gmaps").style.display = "none";
   document.querySelector(".symptomSel").style.display = "flex";
+  window.scrollTo(0, 0);
 }
 document.querySelector(".goToForm").addEventListener('click', handleGoToForm);
 
@@ -330,7 +352,7 @@ var handleDiseaseScreen = function (disease) {
   var diseasesArray = control.logic.diseases;
   var title;
   var description;
-  var images = [undefined, undefined];
+  var images;
   var symptoms = [undefined, undefined];
   var reasons = "Texto de ¿Por qué sucede?";
   var attentionPaths = undefined;
@@ -342,23 +364,43 @@ var handleDiseaseScreen = function (disease) {
       //recibe la info de la enfermedad (la info de arriba)
       title = diseasesArray[i].name;
       description = diseasesArray[i].definition;
+      images = diseasesArray[i].img;
+      link = diseasesArray[i].link;
     }
   }
   // document.getElementById('replace-me').innerText = someVar
   document.getElementById('diseaseTitle').innerText = title;
   document.getElementById('diseaseDescription').innerText = description;
+  document.getElementById('goToYouTubeVideo').addEventListener('click', function () {
+    window.open(link);
+  });
+  console.log(images[1]);
+  document.querySelector(".imgDisease").src = "./Images/uxpin/" + images[1];
 }
-document.getElementById('goToYouTubeVideo').addEventListener('click', function () {
-  window.open('https://www.youtube.com/watch?v=9Js1CbQFUwg');
-});
 
 document.querySelector(".symptomSel__send").addEventListener('click', function () {
-  console.log(control.logic.match(methaSymp));
-  control.logic.match(methaSymp);
+
+  var matching = control.logic.match(methaSymp);
+  console.log(matching);
+
+  handleDiseaseScreen(matching);
+  handleGoToDisease();
 });
 
 
 //Pantalla de videos vinculos
+
+document.getElementById('goToAllVideos').addEventListener('click', function () {
+  document.querySelector(".landingLogIn").style.display = "none";
+  document.querySelector(".landingRegister").style.display = "none";
+  document.querySelector(".navegationBar").style.display = "flex";
+  document.querySelector(".initialScreen").style.display = "none";
+  document.querySelector(".disease").style.display = "none";
+  document.querySelector(".gmaps").style.display = "none";
+  document.querySelector(".symptomSel").style.display = "none";
+  document.querySelector(".diseaseSel").style.display = "none";
+  document.querySelector(".videos").style.display = "block";
+});
 
 document.getElementById('goToDengueVideo').addEventListener('click', function () {
   window.open('https://www.youtube.com/watch?v=9Js1CbQFUwg');
