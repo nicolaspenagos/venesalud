@@ -109,7 +109,7 @@ var sendQuantity = function (event) {
     age: 40,
     sex: "male",
     familyMembers: ["handemore7@gmail.com", "correo1@gmail.com", "correo2@gmail.com", "correo3@gmail.com"],
-    id: Math.random(1, 1000),
+    id: parseInt((Math.random() * 100), 100)
   }).then(function () {
     console.log("se envió la info");
 
@@ -272,7 +272,7 @@ document.querySelector(".dback2").addEventListener('click', function () {
 });
 
 document.querySelector(".navegationBar__DiseasesBtn").addEventListener('click', function () {
-  handleGoToDisease();
+  handleGoToDiseaseSel();
 });
 
 document.querySelector(".navegationBar__UserBtn").addEventListener('click', function () {
