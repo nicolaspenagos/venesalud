@@ -39,8 +39,14 @@ var registerUser = function (event) {
   inputPass = document.querySelector(".landingRegister__input--password");
   inputMail = document.querySelector(".landingRegister__input--mail");
   firebase.auth().createUserWithEmailAndPassword(inputMail.value, inputPass.value).then(function (event) {
-    getUpdates(inputMail.value, true);
-    handleGoToMain();
+    firebase.auth().signInWithEmailAndPassword(inputMail.value, inputPass.value).then(function (user) {
+      console.log("El usuario se conectó");
+      getUpdates(inputMail.value, true);
+      getUpdates(inputMail.value, true);
+      handleGoToMain();
+    }).catch(function (error) {
+      //error
+    });
   }).catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
