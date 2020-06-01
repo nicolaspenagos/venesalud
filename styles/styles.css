@@ -376,6 +376,49 @@ html {
   margin-left: 12%;
 }
 
+.disease__symptoms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.disease__buttoncontainer {
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.disease__simbut {
+  font-size: 2em;
+  border: none;
+  background-color: #fff;
+  border-radius: 15px;
+  color: midnightblue;
+  width: 400px;
+  padding: .10em 1em;
+  text-align: center;
+  margin: 1em 0;
+}
+
 .disease__actions {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -726,11 +769,30 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: midnightblue;
+}
+
+.userProfile__name {
+  font-size: 4em;
+  margin: .5em;
+}
+
+.userProfile__desc {
+  font-size: 2.5em;
+  margin: .2em;
 }
 
 .userProfile__img {
   width: 300px;
   margin: 9em auto;
+  margin-bottom: 3em;
 }
 /*# sourceMappingURL=styles.css.map */

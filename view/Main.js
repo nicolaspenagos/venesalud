@@ -353,10 +353,9 @@ var handleDiseaseScreen = function (disease) {
   var title;
   var description;
   var images;
-  var symptoms = [undefined, undefined];
+  var link;
+  var symptoms;
   var reasons = "Texto de ¿Por qué sucede?";
-  var attentionPaths = undefined;
-  var preventionMethods = "link al video de YouTube"
 
 
   for (let i = 0; i < diseasesArray.length; i++) {
@@ -366,6 +365,7 @@ var handleDiseaseScreen = function (disease) {
       description = diseasesArray[i].definition;
       images = diseasesArray[i].img;
       link = diseasesArray[i].link;
+      symptoms = diseasesArray[i].symptoms;
     }
   }
   // document.getElementById('replace-me').innerText = someVar
@@ -374,8 +374,13 @@ var handleDiseaseScreen = function (disease) {
   document.getElementById('goToYouTubeVideo').addEventListener('click', function () {
     window.open(link);
   });
-  console.log(images[1]);
   document.querySelector(".imgDisease").src = "./Images/uxpin/" + images[1];
+
+  console.log(symptoms);
+  for (let i = 0; i < (symptoms.length) / 2; i++) {
+    var element = symptoms[i];
+
+  }
 }
 
 document.querySelector(".symptomSel__send").addEventListener('click', function () {

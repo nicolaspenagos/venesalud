@@ -187,20 +187,24 @@
       </a>
       <img src="./Images/logo_solo.png" class="symptomSel__logo" alt="">
     </div>
-
-
     <div class="disease__info">
       <p class="disease__infotext disease__info__text--title" id="diseaseTitle"></p>
       <p class="disease__infotext disease__info__text--content" id="diseaseDescription"></p>
     </div>
     <div class="disease__symptoms">
       <img src="./Images/neutralMan.png" alt="" class="imgDisease">
-      <input type="button" value="Dolor en huesos y articulaciones">
+      <div class="disease__buttoncontainer">
+        <button id="opt1" class="disease__simbut disabled">Dolor en huesos y
+          articulaciones</button>
+        <button id="opt2" class="disease__simbut disabled">Dolor en cabeza y
+          huesos</button>
+        <button id="opt3" class="disease__simbut actived">Dolor en pecho y
+          espalda</button>
+        <button id="opt4" class="disease__simbut actived">Dolor en Piernas y
+          muslos</button>
+      </div>
     </div>
     <div class="disease__actions">
-      <p class="disease__actions__text disease__actions__text--title"><strong>¿Por qué sucede?</strong></p>
-      <p class="disease__actions__text disease__actions__text--content">Este virus se propaga debido a la picadura de
-        los mosquitos hembra, principalmente de la especie Aedes aegypti.</p>
       <a id="goToMapFromDisease">
         <div class="disease__actions__item disease__actions__item--short">
           <div class="disease__actions__item--short--img">
@@ -269,8 +273,12 @@
 
     <div class="userProfile__info">
       <img src="./Images/userProfile.jpeg" class="userProfile__img" alt="">
+      <h1 class="userProfile__name">Yoyas toyas</h1>
+      <p class="userProfile__desc userProfile__desc--age">19 anos</p>
+      <p class="userProfile__desc userProfile__desc--gender">Masculino</p>
     </div>
     <div class="userProfile__familyMembers">
+      <div class="userProfile__member"></div>
 
     </div>
   </main>
