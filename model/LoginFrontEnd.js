@@ -17,5 +17,6 @@ var myFunction = function (event) {
         eyeShowed.style.display = "none";
         eyeHidden.style.display = "block";
     }
+
 }
 //hideEye.addEventListener('click', myFunction);

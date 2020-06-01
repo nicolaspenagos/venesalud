@@ -406,6 +406,7 @@ var handleDiseaseScreen = function (disease) {
 
   var allbuts = document.querySelectorAll('.disease__simbut');
 
+
   var botoness = Array.apply(null, allbuts);
 
   for (let i = 0; i < botoness.length; i++) {

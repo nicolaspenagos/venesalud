@@ -1,12 +1,13 @@
-class Controller{
-    constructor(){
-        this.logic = new Logic() ;
+class Controller {
+
+    constructor() {
+        this.logic = new Logic();
 
     }
-    test(){
-        this.logic.test(); 
+    test() {
+        this.logic.test();
     }
-    logIn(){
+    logIn() {
         this.logic.logIn();
     }
 

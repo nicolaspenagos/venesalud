@@ -101,6 +101,7 @@ function coordenadasArray(map, userPos) {
                     url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
                 }
 
+
             });
 
             var contentString = '<div id="content">' +
